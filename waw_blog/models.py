@@ -13,7 +13,7 @@ class POST(models.Model):
     featured_image = CloudinaryField('image', default = 'placeholder')
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name='blog-likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     view_count = models.IntegerField(default=0)
     comment_count = models.IntegerField(default=0)
     
