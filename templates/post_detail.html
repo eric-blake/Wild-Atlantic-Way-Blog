@@ -4,13 +4,15 @@
 
 <div class="container">
 
-    <img src="{{ post.featured_image.url}}" alt="">
+    <img src="{{ post.featured_image.url}}">
 
-    <div>
-        {{post.title}}
-        {{ post.author}}
-        {{post.created_on}}
-        {{ post.content}}
+    <div class="row">
+        <div class="col">
+       <h1>{{post.title}}</h1>
+        <p>{{post.author}}</p>
+        <p>{{post.created_on}}</p>
+        <p>{{post.content}}</p>
+        </div>
     </div>
 
 </div>
@@ -18,4 +20,4 @@
 
 
 
-{% endblock%}
+{% endblock %}
