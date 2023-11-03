@@ -13,13 +13,15 @@
                     <div class="card mb-4">
                     <div class="card-body">
                         <div class="image-container">     
-                             <img src="{{ post.featured_image.url}}" alt="">
+                             <img class ="card-img-top" src="{{ post.featured_image.url}}" alt="">
                         </div>
                         <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             <h2 class="card-title">{{ post.title }}</h2>
                             <p class="card-text">{{ post.excerpt }}</p>
                         </a>
                     </div>
+                    <hr />
+                    <p class ="card-text"> {{ post.created_on}} <i class="far fa-heart"> {{ post.number_of_likes}}</i></p>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
