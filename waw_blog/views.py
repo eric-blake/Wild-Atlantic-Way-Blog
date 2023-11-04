@@ -28,5 +28,5 @@ class PostDetail(View):
             }
         )
 
-
+    
 
