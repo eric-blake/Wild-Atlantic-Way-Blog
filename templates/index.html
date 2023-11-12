@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load hitcount_tags %}
 {% block content %}
 
 <div class="container-fluid">
@@ -22,6 +22,7 @@
                     </div>
                     <hr />
                     <p class ="card-text"> {{ post.created_on}} <i class="far fa-heart"> {{ post.number_of_likes}}</i></p>
+                    <p>Views: {% get_hit_count for post %}</p>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
