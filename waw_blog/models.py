@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from hitcount.models import HitCountMixin, HitCount
+from django.contrib.contenttypes.fields import GenericRelation
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -16,7 +18,8 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    view_count = models.IntegerField(default=0)
+    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
+                                        related_query_name='hit_count_generic_relation')
     comment_count = models.IntegerField(default=0)
 
     class Meta:
