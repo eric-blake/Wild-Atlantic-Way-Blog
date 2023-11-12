@@ -7,6 +7,17 @@ from django.contrib.contenttypes.fields import GenericRelation
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -21,6 +32,8 @@ class Post(models.Model):
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
                                         related_query_name='hit_count_generic_relation')
     comment_count = models.IntegerField(default=0)
+    categories = models.ManyToManyField(Category)
+
 
     class Meta:
         ordering = ['-created_on']
@@ -46,3 +59,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
