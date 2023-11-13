@@ -1,0 +1,28 @@
+{% load hitcount_tags %}
+
+        {% for post in post_list %}
+        <div class="col-md-6">
+            <div class="card mb-6 d-block">
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ post.featured_image.url}}" alt="">
+                </div>
+                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                </a>
+            </div>
+            <hr />
+            <p class="card-text"> {{ post.created_on}} <i class="far fa-heart"> {{ post.number_of_likes}}</i></p>
+            <p>Views: {% get_hit_count for post %}</p>
+
+        </div>
+        {% if forloop.counter|divisibleby:2 %}
+    </div>
+
+    <div class="row">
+        {% endif %}
+
+        {% endfor %}
+    </div>
+
+</div>

@@ -1,48 +1,29 @@
 {% extends "base.html" %}
-{% load hitcount_tags %}
+
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
 
-        <!-- blog entries column -->
-        <div class="col-12 mt-3 left">
+{% include 'header.html' %}
+
+<main class ="main-content">
+    <div class="section">
+        <div class="container">
             <div class="row">
-                {% for post in post_list %}
-                    <div class="col-md-4">
-                    <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="image-container">     
-                             <img class ="card-img-top" src="{{ post.featured_image.url}}" alt="">
-                        </div>
-                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                            <h2 class="card-title">{{ post.title }}</h2>
-                            <p class="card-text">{{ post.excerpt }}</p>
-                        </a>
-                    </div>
-                    <hr />
-                    <p class ="card-text"> {{ post.created_on}} <i class="far fa-heart"> {{ post.number_of_likes}}</i></p>
-                    <p>Views: {% get_hit_count for post %}</p>
+                <div class="col-md-8 col-xl-9">
+                    <div class="row gap-y">
+                        {% include 'posts.html' %}
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
             </div>
-
-            <div class="row">
-                {% endif %}
-
-                {% endfor %}
-            </div>
-
-
         </div>
-        </div>
-
-
     </div>
+</main>
+        
+
+   
+{% include 'sidebar.html' %}
+      
 
 
-
-</div>
 
 {% endblock %}
