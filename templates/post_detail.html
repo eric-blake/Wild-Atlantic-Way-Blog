@@ -7,7 +7,7 @@
 
 <!-- Post details -->
 <div class="container">
-    <div class="row">
+    <div class="row text-center">
         <div>
        <h1>{{post.title}}</h1>
         <p>{{post.created_on|date}} | {{post.categories.all.0}}</p>
@@ -19,8 +19,6 @@
         {{post.content | safe }}
         </p>
       
-       
-       
         </div>
     </div>
 

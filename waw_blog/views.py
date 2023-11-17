@@ -4,15 +4,21 @@ from django.http import HttpResponseRedirect
 from .models import Post, Category
 from .forms import CommentForm
 from hitcount.views import HitCountDetailView, HitCountMixin
-
+from django.core.paginator import Paginator
 
 def blog(request):
     context = {}
     posts = Post.objects.filter(status=1).order_by("-hit_count_generic")
     categories = Category.objects.all()
+
+    paginator = Paginator(posts, 4) 
+    page_number = request.GET.get("page")
+    posts = paginator.get_page(page_number)
+
     context = {
         'posts': posts,
         'categories': categories,
+       
     
     }
     return render(request, 'index.html', context)
