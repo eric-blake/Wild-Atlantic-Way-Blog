@@ -2,3 +2,18 @@
     position: relative;
 
 }
+
+body {
+    background-color: rgba(240, 238, 238);
+}
+
+
+.post-text {
+
+    background-color: white;
+}
+
+/* Card */
+.card-title {
+
+}
