@@ -1,31 +1,42 @@
 {% load hitcount_tags %}
 
 
-        {% for post in posts %}
-  
-        <div class="container my-3">
-            <div class="card row flex-row">
-                <img class="col-lg-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
-                <div class="col-lg-6 card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        <h2 class="card-title">{{ post.title }}</h2>
-                        <p class="card-text">{{ post.excerpt }}</p>
-                    </a>
-                    <hr />
-                    <p class="card-text"> {{post.created_on|date}} <i class="far fa-heart"> {{ post.number_of_likes}}</i></p>
-                    <p>Views: {% get_hit_count for post %}</p>
-                    <p>Comments: {{comment_count}}</p>
-        
+{% for post in posts %}
+
+<div class="container my-3">
+    <div class="card row flex-row">
+        <img class="col-lg-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
+
+        <div class="col-lg-6 card-body">
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <p class="card-text"> {{post.created_on|date}}
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.excerpt }}</p>
+            </a>
+            <hr />
+
+
+
+            <div class="row ">
+                <div class="col-sm-6">
+                    <p>Views: {% get_hit_count for post %} Comments: {{comment_count}}</p>
+                </div>
+
+                <div class="col-sm-6" ><i class="far fa-heart btn-like"></i> {{ post.number_of_likes}}</p>
                 </div>
             </div>
+
+
         </div>
-        
-        {% if forloop.counter|divisibleby:1 %}
+
+
     </div>
+</div>
 
-    <div class="row">
-        {% endif %}
+{% if forloop.counter|divisibleby:1 %}
+</div>
 
-        {% endfor %}
-        
-  
+<div class="row">
+    {% endif %}
+
+    {% endfor %}

@@ -25,3 +25,10 @@ a:link {
 a:hover {
     text-decoration: underline;
 }
+
+
+.btn-like {
+    color:red;
+    border:none;
+
+}
