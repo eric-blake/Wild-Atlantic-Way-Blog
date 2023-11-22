@@ -26,11 +26,13 @@
 <hr>
 
 
-<div>
+<div class="container">
 
+<div class="row">
 <!-- No of views -->
+<div class="col">
 <p>Views: {% get_hit_count for post %}</p>
-
+</div>
 
 <!-- Likes -->
 <div class="col-1">
@@ -55,11 +57,17 @@
 
 </div>
 
+
+</div>
+
 </div>
 
 <hr>
 
 <!-- comments -->
+
+<div class="container">
+
 <div>
     <h3>{{ post.comment_count}} Comments</h3>
 <hr>
@@ -115,7 +123,7 @@
 </div>
 </div>
 
-
+</div>
 
 
 {% endblock content %}
