@@ -89,7 +89,6 @@
         <p> Posting as: {{ user.username }}</p>
         <form method="post">
             {{ comment_form | crispy  }}
-            
             {% csrf_token %}
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>
@@ -102,8 +101,6 @@
 </div>
 
 
-
-
 <div class ="row">
 <div class="col-md-8">
   
@@ -112,9 +109,10 @@
         {% for comment in comments %}
         <div class="comments">
             <p class="font-weight-bold">
+                <img class="avatar-sm mr-4" src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png" alt="avatar image">
             {{comment.name}}
             <span class = "text-muted">
-                {{comments.created_on}}
+                {{comment.created_on |date}}
             </span>
             </p>
     
