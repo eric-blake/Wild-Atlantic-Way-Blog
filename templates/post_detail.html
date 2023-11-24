@@ -102,14 +102,13 @@
 
 
 <div class ="row">
-<div class="col-md-8">
+<div class="col-8">
   
-   
-    <div class="card-body">
+    <div class="media-list">
         {% for comment in comments %}
         <div class="comments">
             <p class="font-weight-bold">
-                <img class="avatar-sm mr-4" src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png" alt="avatar image">
+                <!-- <img class="avatar avatar-sm mr-4" src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png" alt="avatar image"> -->
             {{comment.name}}
             <span class = "text-muted">
                 {{comment.created_on |date}}
