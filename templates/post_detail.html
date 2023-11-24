@@ -100,30 +100,29 @@
 
 </div>
 
+{% for comment in comments %}
+      
+        <div class="container">
+            <div class="row">
 
-<div class ="row">
-<div class="col-8">
-  
-    <div class="media-list">
-        {% for comment in comments %}
-        <div class="comments">
-            <p class="font-weight-bold">
-                <!-- <img class="avatar avatar-sm mr-4" src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png" alt="avatar image"> -->
-            {{comment.name}}
-            <span class = "text-muted">
-                {{comment.created_on |date}}
-            </span>
-            </p>
-    
-            {{ comment.body | linebreaks}}
+                <div class="col-1">
+         
+        <img class="d-flex align-self-start mr-3 avatar-image" src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png"
+            alt="avatar image">
+            </div>
+
+            <div class="col-6">
+        <h5 class="mt-0">{{comment.name}}</h5>
+        <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h5>
+           <p> {{ comment.body | linebreaks}}</p>
         </div>
+
+        </div>
+</div>
 
         {% endfor %}
 
-    </div>
-</div>
-</div>
-
+    
 </div>
 
 

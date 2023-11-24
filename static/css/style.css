@@ -39,3 +39,13 @@ a:hover {
     list-style: none;
 }
 
+.social-media {
+    color: black;
+}
+
+
+.avatar-image {
+border-radius: 50%;
+max-width: 50%;
+    height: auto;
+}
