@@ -11,7 +11,16 @@
         <div class="col-m-6">
        <h1>{{post.title}}</h1>
         <p>{{post.created_on|date}} | {{post.categories.all.0}}</p>
-        <img class="card-img-top" src="{{post.featured_image.url}}">
+
+    <div class="col-m-6">
+    {% if "placeholder" in post.featured_image.url %}
+    <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+    {% else %}
+    <img src="{{ post.featured_image.url }}" width="100%">
+    {% endif %}
+        </div>
+
+
         <p>{{post.author}}</p>
 
         <p class ="card-text">

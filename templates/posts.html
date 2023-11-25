@@ -5,8 +5,12 @@
 
 <div class="container my-3">
     <div class="card row flex-row">
-        <img class="col-lg-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
 
+        {% if "placeholder" in post.featured_image.url %}
+        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="col-lg-6 card-img-end img-fluid p-0" width="100%">
+        {% else %}
+        <img class="col-lg-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
+        {% endif %}
         <div class="col-lg-6 card-body">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 <p class="card-text"> {{post.created_on|date}}
