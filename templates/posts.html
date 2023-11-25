@@ -21,9 +21,10 @@
 
 
 
-            <div class="row ">
+            <div class="row">
                 <div class="col-sm-6">
-                    <p>Views: {% get_hit_count for post %} Comments: {{comment_count}}</p>
+                    <p>Views: {% get_hit_count for post %} </p>
+                    <p>{{ post.comment_count }} Comments</p>
                 </div>
 
                 <div class="col-sm-6" ><i class="far fa-heart btn-like"></i> {{ post.number_of_likes}}</p>
