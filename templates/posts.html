@@ -4,16 +4,16 @@
 {% for post in posts %}
 
 <div class="container my-3">
-    <div class="card row flex-row">
+    <div class="card row flex-lg-row">
 
         {% if "placeholder" in post.featured_image.url %}
         <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="col-lg-6 card-img-end img-fluid p-0" width="100%">
         {% else %}
-        <img class="col-lg-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
+        <img class="col-xl-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
         {% endif %}
 
         
-        <div class="col-6 card-body d-flex flex-column">
+        <div class="col-xl-6 card-body d-flex flex-column">
             <p class="card-text"> {{post.created_on|date}}</p>
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                     <h2 class="card-title">{{ post.title }}</h2>
