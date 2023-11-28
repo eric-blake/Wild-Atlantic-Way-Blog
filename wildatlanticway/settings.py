@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-eric-blake-wild-atlantic-qvlosoy6sv.us2.codeanyapp.com',
-                 'localhost', 'wild-atlantic-way.herokuapp.com', '8000-eric-blake-wild-atlantic-73xn9ewlb8.us2.codeanyapp.com']
+                 'localhost', 'wild-atlantic-way.herokuapp.com',  '8000-eric-blake-wild-atlantic-qseqcmt1mf.us2.codeanyapp.com']
 
 
 # Application definition
