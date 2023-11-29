@@ -33,6 +33,7 @@ a:hover {
 
 a {
     color: black;
+    font-size: 2rem;
 }
 
 .btn-like {
@@ -48,9 +49,13 @@ a {
 }
 
 .social-media {
-    color: black;
+    color: white;
 }
 
+.social {
+    background-color: #969696;
+
+}
 
 .avatar-image {
 border-radius: 50%;
