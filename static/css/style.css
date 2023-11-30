@@ -33,7 +33,7 @@ a:hover {
 
 a {
     color: black;
-    font-size: 2rem;
+  
 }
 
 .btn-like {
@@ -50,6 +50,7 @@ a {
 
 .social-media {
     color: white;
+    font-size: 1.5rem;
 }
 
 .social {
