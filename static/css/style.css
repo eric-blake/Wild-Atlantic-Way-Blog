@@ -68,7 +68,6 @@ footer {
     margin-top: auto;
 }
 
-
 .avatar-image {
 border-radius: 50%;
 max-width: 50%;
@@ -78,4 +77,9 @@ max-width: 50%;
 ul {
     padding: 0;
     list-style-type: none;
+}
+
+
+.page-btn {
+    font-size: medium;
 }
