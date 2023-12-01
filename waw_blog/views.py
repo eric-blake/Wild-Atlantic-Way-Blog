@@ -26,7 +26,7 @@ def blog(request):
 class PostDetail(HitCountDetailView):
     model = Post
     count_hit = True
-
+ 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -77,8 +77,6 @@ class PostDetail(HitCountDetailView):
 
         return render(request, 'post_detail.html', context)
     
-
-
 
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
