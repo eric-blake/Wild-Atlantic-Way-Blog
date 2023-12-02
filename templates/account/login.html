@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load allauth account socialaccount %}
+{% load crispy_forms_tags %}
 {% block head_title %}
-    {% trans "Sign In" %}
+{% trans "Sign In" %}
 {% endblock head_title %}
+
 {% block content %}
 
 <div class="container">
@@ -12,7 +14,7 @@
 
 
             {% element h1 %}
-           <h3> {% trans "Sign In" %}</h3>
+            <h3> {% trans "Sign In" %}</h3>
             {% endelement %}
             <p>
                 {% blocktrans %} Welcome to the Travel blog. To leave a comment or like a post, please log in. If you
@@ -21,33 +23,24 @@
             </p>
 
         </div>
-</div>
+    </div>
 
-<div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
 
 
-    {% url 'account_login' as login_url %}
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-        {% slot body %}
-            {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" tags="prominent,login" %}
-            
-                {% trans "Sign In" %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-    <!-- {% include "socialaccount/snippets/login.html" with page_layout="entrance" %} -->
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <div class="my-4">
+                    <button class="btn btn-primary btn-card" type="submit">{% trans "Sign In" %}</button>
+                    </a>
+                </div>
+            </form>
 
         </div>
-        
-{% endblock content %}
+
+        {% endblock content %}
