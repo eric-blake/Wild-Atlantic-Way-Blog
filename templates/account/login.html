@@ -11,21 +11,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-
-
-            {% element h1 %}
+            <div class="card" style="max-width: 40rem;">
+                <div class="card-header">
             <h3> {% trans "Sign In" %}</h3>
-            {% endelement %}
+            </div>
+
+            <div class="card-body">
             <p>
                 {% blocktrans %} Welcome to the Travel blog. To leave a comment or like a post, please log in. If you
                 have not created an account yet, then
-                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+                <strong><a href="{{ signup_url }}">sign up</a></strong> first.{% endblocktrans %}
             </p>
-
-        </div>
-    </div>
-
-    <div class="row">
+  
         <div class="col-md-8 mt-3 offset-md-2">
 
 
@@ -40,7 +37,14 @@
                     </a>
                 </div>
             </form>
+            </div>
+        </div>
+
 
         </div>
+
+        </div>
+    </div>
+</div>
 
         {% endblock content %}
