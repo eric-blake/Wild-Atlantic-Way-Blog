@@ -29,7 +29,17 @@
             <p class="card-text">{{post.number_of_comments}} Comments</p>
             </div>
             </div>
+            {% if user.is_authenticated %}
+            {% if post.author.id == user.id %}
 
+            <div class="col-3">
+                    <li>
+                        <a href="{% url 'post_update' post.slug %}" class='btn'>Edit</a>
+                    </li>
+            </div>
+
+            {% endif %}
+            {% endif %}
             </div>
         
         </div>

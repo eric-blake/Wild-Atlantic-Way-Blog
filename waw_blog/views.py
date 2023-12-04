@@ -5,13 +5,13 @@ from .models import Post, Category
 from .forms import CommentForm, PostForm
 from hitcount.views import HitCountDetailView, HitCountMixin
 from django.core.paginator import Paginator
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib import messages
 
 def blog(request):
     context = {}
-    posts = Post.objects.filter(status=1).order_by("-hit_count_generic")
+    posts = Post.objects.filter(status=1).order_by("-created_on")
     categories = Category.objects.all()
     paginator = Paginator(posts, 4) 
     page_number = request.GET.get("page")
@@ -97,7 +97,6 @@ class PostLike(View):
 
 
 class PostCreate(CreateView):
-
     model = Post
     form_class= PostForm
     template_name = 'post_create.html'
@@ -109,3 +108,19 @@ class PostCreate(CreateView):
         messages.add_message(self.request, messages.SUCCESS, success_message)
         return super().form_valid(form)
         
+
+class PostUpdate(UpdateView):
+    model = Post
+    form_class= PostForm
+    template_name = 'post_update.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        success_message = "Your post has been updated successully."
+        messages.add_message(self.request, messages.SUCCESS, success_message)
+        return super().form_valid(form)
+
+
+
+
