@@ -5,7 +5,7 @@ from .models import Post, Category
 from .forms import CommentForm, PostForm
 from hitcount.views import HitCountDetailView, HitCountMixin
 from django.core.paginator import Paginator
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -121,6 +121,19 @@ class PostUpdate(UpdateView):
         messages.add_message(self.request, messages.SUCCESS, success_message)
         return super().form_valid(form)
 
+
+
+class PostDelete(DeleteView):
+    model = Post
+    form_class = PostForm
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        success_message = "Your post has been deleted successully."
+        messages.add_message(self.request, messages.SUCCESS, success_message)
+        return super().form_valid(form)
 
 
 

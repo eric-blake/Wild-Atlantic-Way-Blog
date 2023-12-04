@@ -36,6 +36,9 @@
                     <li>
                         <a href="{% url 'post_update' post.slug %}" class='btn'>Edit</a>
                     </li>
+                    <li>
+                        <a href="{% url 'post_delete' post.slug %}" class='btn'>Delete</a>
+                    </li>
             </div>
 
             {% endif %}
