@@ -12,34 +12,35 @@
 
             <div class="row">
                 <div class="col-3">
-            <h4>
-                <a class="d-flex justify-content-start pt-2 text-secondary" aria-current="page" href="{% url 'home' %}">All Posts</a>
-            </h4>
+                    <h4>
+                        <a class="d-flex justify-content-start pt-2 text-secondary" aria-current="page"
+                            href="{% url 'home' %}">All Posts</a>
+                    </h4>
+                </div>
+                <div class="col-6">
+                    <h1>{{post.title}}</h1>
+                </div>
             </div>
-            <div class="col-6">
-       <h1>{{post.title}}</h1>
-    </div>
-    </div>
 
 
-        <p>{{post.created_on|date}} | {{post.categories.all.0}}</p>
-        
-        
-
-    <div class="col-m-6">
-    {% if "placeholder" in post.featured_image.url %}
-    <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-    {% else %}
-    <img src="{{ post.featured_image.url }}" width="100%">
-    {% endif %}
-        </div>
+            <p>{{post.created_on|date}} | {{post.categories.all.0}}</p>
 
 
-        <p>{{post.author}}</p>
 
-        <p class ="card-text">
-        {{post.content | safe }}
-        </p>
+            <div class="col-m-6">
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" width="100%">
+                {% endif %}
+            </div>
+
+
+            <p>{{post.author}}</p>
+
+            <p class="card-text">
+                {{post.content | safe }}
+            </p>
         </div>
     </div>
 
@@ -50,39 +51,39 @@
 
 <div class="container">
 
-<div class="row">
+    <div class="row">
 
-<!-- Likes -->
-<div class="col-1">
-    {% if user.is_authenticated %}
-    <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-        {% csrf_token %}
-        {% if liked %}
-        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                class="fas fa-heart"></i></button>
-        {% else %}
-        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                class="far fa-heart"></i></button>
-        {% endif %}
-    </form>
-    {% else %}
-    <span><i class="far fa-heart"></i></span>
-    {% endif %}
+        <!-- Likes -->
+        <div class="col-1">
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                        class="fas fa-heart"></i></button>
+                {% else %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                        class="far fa-heart"></i></button>
+                {% endif %}
+            </form>
+            {% else %}
+            <span><i class="far fa-heart"></i></span>
+            {% endif %}
 
-    <!-- Number of likes -->
-    <span>{{ post.number_of_likes}}</span>
-
-
-</div>
-
-<!-- No of views -->
-<div class="col">
-    <p>Views: {% get_hit_count for post %}</p>
-</div>
+            <!-- Number of likes -->
+            <span>{{ post.number_of_likes}}</span>
 
 
+        </div>
 
-</div>
+        <!-- No of views -->
+        <div class="col">
+            <p>Views: {% get_hit_count for post %}</p>
+        </div>
+
+
+
+    </div>
 
 </div>
 
@@ -93,62 +94,79 @@
 <div class="container">
 
     <div class="row">
-<div>
-    <h3>{{comment_count}} Comments</h3>
-
-    </div>
-
-</div>
-
-<div class="row justify-content-center">
-<div class="col-md-12 card mb-4 mt-3">
-    <div class='card-body'>
-        {% if commented %}
-        <div class="alert" alert-success role="alert">
-            Your comment is awaiting approval
+        <div>
+            <h3>{{comment_count}} Comments</h3>
         </div>
-        {% else %}
-        {% if user.is_authenticated %}
-
-        <h3>Leave a comment</h3>
-        <p> Posting as: {{ user.username }}</p>
-        <form method="post">
-            {{ post_form | crispy }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-        </form>
-
-        {% endif %}
-        {% endif %}
     </div>
-</div>
 
-</div>
 
-{% for comment in comments %}
-      
-        <div class="container">
-            <div class="row">
+   
 
-                <div class="col-1">
-         
-        <img class="d-flex align-self-start mr-3 avatar-image" src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png"
-            alt="avatar image">
+    <div class="row">
+        <div class="col-md-6 card m-4">
+            <div class='card-body'>
+                {% if commented %}
+                <div class="alert" alert-success role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+                <h3>Leave a comment</h3>
+                <p> Posting as: {{ user.username }}</p>
+                <form method="post">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Additional information -->
+            <div class="col-md-4 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Additional Information</h4>
+                        <p class="card-text">
+                        <ul>
+                            <li> <strong>Type of activity:</strong> {{ post.activity}}</li>
+                            <li> <strong>Getting there:</strong> {{post.getting_there}}</li>
+                            <li><strong>Duration:</strong> {{ post.duration}} hours</li>
+                            <li> <strong>Travel advice:</strong> {{ post.travel_advice}}</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
             </div>
 
+
+    </div>
+
+    {% for comment in comments %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <img class="d-flex align-self-start mr-3 avatar-image"
+                    src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png"
+                    alt="avatar image">
+            </div>
             <div class="col-6">
-        <h5 class="mt-0">{{comment.name}}</h5>
-        <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h5>
-           <p> {{ comment.body | linebreaks}}</p>
+                <h5 class="mt-0">{{comment.name}}</h5>
+                <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h5>
+                    <p> {{ comment.body | linebreaks}}</p>
+            </div>
         </div>
+    </div>
 
-        </div>
+    {% endfor %}
+
+
+
 </div>
 
-        {% endfor %}
 
-    
-</div>
 
 
 {% endblock content %}
