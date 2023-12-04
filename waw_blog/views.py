@@ -2,9 +2,12 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Post, Category
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from hitcount.views import HitCountDetailView, HitCountMixin
 from django.core.paginator import Paginator
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from django.contrib import messages
 
 def blog(request):
     context = {}
@@ -79,6 +82,9 @@ class PostDetail(HitCountDetailView):
     
 
 class PostLike(View):
+    """
+    Logged in user can like and unlike a post
+    """
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
 
@@ -88,3 +94,18 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class PostCreate(CreateView):
+
+    model = Post
+    form_class= PostForm
+    template_name = 'post_create.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        success_message = "Your post is awaiting approval."
+        messages.add_message(self.request, messages.SUCCESS, success_message)
+        return super().form_valid(form)
+        

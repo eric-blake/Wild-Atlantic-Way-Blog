@@ -113,7 +113,7 @@
         <h3>Leave a comment</h3>
         <p> Posting as: {{ user.username }}</p>
         <form method="post">
-            {{ comment_form | crispy  }}
+            {{ post_form | crispy }}
             {% csrf_token %}
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>
