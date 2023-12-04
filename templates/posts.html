@@ -7,44 +7,48 @@
     <div class="card row flex-lg-row">
 
         {% if "placeholder" in post.featured_image.url %}
-        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="col-lg-6 card-img-end img-fluid p-0" width="100%">
+        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+            class="col-lg-6 card-img-end img-fluid p-0" width="100%">
         {% else %}
         <img class="col-xl-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" />
         {% endif %}
 
-        
+
         <div class="col-xl-6 card-body d-flex flex-column">
             <p class="card-text"> {{post.created_on|date}}</p>
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text">{{ post.excerpt }}</p>
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.excerpt }}</p>
             </a>
             <div class="mt-auto">
                 <hr>
-            <div class="row">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="far fa-heart btn-like align-self-end"></i> <span>{{ post.number_of_likes}}</span>
+                    </div>
+                    <div class="col-3">
+                        <p class="card-text">{{post.number_of_comments}} Comments</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-3">
+                {% if user.is_authenticated %}
+                {% if post.author.id == user.id %}
+            
                 <div class="col-3">
-            <i class="far fa-heart btn-like align-self-end"></i> <span>{{ post.number_of_likes}}</span>
-            </div>
-            <div class="col-3">
-            <p class="card-text">{{post.number_of_comments}} Comments</p>
-            </div>
-            </div>
-            {% if user.is_authenticated %}
-            {% if post.author.id == user.id %}
-
-            <div class="col-3">
-                    <li>
-                        <a href="{% url 'post_update' post.slug %}" class='btn'>Edit</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'post_delete' post.slug %}" class='btn'>Delete</a>
-                    </li>
+                    <a href="{% url 'post_update' post.slug %}" class='btn btn-outline-secondary'>Edit</a>
+                </div>
+            
+                <div class="col-3">
+                    <a href="{% url 'post_delete' post.slug %}" class='btn btn-outline-secondary'>Delete</a>
+                </div>
+                {% endif %}
+                {% endif %}
             </div>
 
-            {% endif %}
-            {% endif %}
-            </div>
-        
+
         </div>
     </div>
 </div>
