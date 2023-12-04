@@ -34,6 +34,10 @@ class Post(models.Model):
                                         related_query_name='hit_count_generic_relation')
     comment_count = models.IntegerField(default=0)
     categories = models.ManyToManyField(Category)
+    activity = models.TextField(max_length=200, default='')
+    travel_advice = models.TextField(default='')
+    getting_there = models.TextField(default='')
+    duration = models.IntegerField(default=0)
 
 
     class Meta:
