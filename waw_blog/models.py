@@ -8,15 +8,16 @@ from django.template.defaultfilters import slugify
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Category(models.Model):
-    title = models.CharField(max_length=20)
+class Categories(models.Model):
+    name = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=200, unique=True)
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"
+        verbose_name = "Post category"
+        verbose_name_plural = "Post categories"
 
 
 class Post(models.Model):
@@ -33,7 +34,7 @@ class Post(models.Model):
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
                                         related_query_name='hit_count_generic_relation')
     comment_count = models.IntegerField(default=0)
-    categories = models.ManyToManyField(Category)
+    category = models.ForeignKey(Categories, blank=True, null=True, on_delete=models.CASCADE, related_name="post_category")
     activity = models.TextField(max_length=200, default='')
     travel_advice = models.TextField(default='')
     getting_there = models.TextField(default='')
