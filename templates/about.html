@@ -1,5 +1,48 @@
-{% extends "base.html" %} {% block content %} {% include 'header.html' %}
+{% extends "base.html" %} {% block content %}
 
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class='text-center pt-3'>About</h1>
+
+            <hr>
+
+            <p> Wild Atlantic Way travel blog was launched in 2023</p>
+
+            <p>What can you expect to find here? Articles about tourist locations along Irelands west coast</p>
+            <!-- <p>The site admininstator has the right to remove content that is not in keeping with the sites ethos!</p>
+            -->
+
+
+            {% if user.is_authenticated %}
+            {% else %}
+            <p>if you would like to see more then <strong><a href="{% url 'account_signup' %}">Register</a></strong>
+                here.
+
+            <p>Already have an account, them <strong><a href="{% url 'account_login' %}">Login</a></strong> here</p>
+
+            {% endif %}
+
+            <hr>
+        </div>
+    </div>
+
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <ul class="contact-details">
+                <li class="text-center">
+                    <h3>Contact</h3>
+                </li>
+                <li class="text-center">+353 (0) 91 100 2000 </li>
+                <li class="text-center"> info@travelblog.com</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
 
 <div class=""></div>
 
