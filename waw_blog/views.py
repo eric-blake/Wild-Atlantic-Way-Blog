@@ -12,8 +12,16 @@ from django.db.models import Count
 
 
 
+def about(request):
+    """ Returns about.html """
+    return render(request, 'about.html')
+
+
 # Learned concept of how to filter posts from tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
 def post_filter(request, category_slug=None):
+    """
+    Filter the posts by category
+    """
     context = {}
     posts = Post.objects.filter(status=1)
     categories = Categories.objects.all()
@@ -41,7 +49,6 @@ def blog(request):
     paginator = Paginator(posts, 4) 
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
-    #popular_posts = Post.objects.filter(status=1).order_by('-like_count')
     popular_posts = Post.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:5]
  
 
@@ -127,6 +134,9 @@ class PostLike(View):
 
 
 class PostCreate(CreateView):
+    """
+    Logged in user can create a post
+    """
     model = Post
     form_class= PostForm
     template_name = 'post_create.html'
@@ -140,6 +150,9 @@ class PostCreate(CreateView):
         
 
 class PostUpdate(UpdateView):
+    """
+    Logged in user can update their own post
+    """
     model = Post
     form_class= PostForm
     template_name = 'post_update.html'
@@ -154,6 +167,9 @@ class PostUpdate(UpdateView):
 
 
 class PostDelete(DeleteView):
+    """
+    Logged in user can delete their own post
+    """
     model = Post
     form_class = PostForm
     template_name = 'post_delete.html'
@@ -164,6 +180,8 @@ class PostDelete(DeleteView):
         success_message = "Your post has been deleted successully."
         messages.add_message(self.request, messages.SUCCESS, success_message)
         return super().form_valid(form)
+
+
 
 
 
