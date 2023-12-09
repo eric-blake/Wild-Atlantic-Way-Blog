@@ -23,7 +23,7 @@
             </div>
 
 
-            <p>{{post.created_on|date}} | {{post.categories.all.0}}</p>
+            <p>{{post.created_on|date}} | {{post.category}}</p>
 
 
 
@@ -76,10 +76,10 @@
 
         </div>
 
-        <!-- No of views -->
+        <!-- No of views
         <div class="col">
             <p>Views: {% get_hit_count for post %}</p>
-        </div>
+        </div> -->
 
 
 
@@ -95,7 +95,7 @@
 
     <div class="row">
         <div>
-            <h3>{{comment_count}} Comments</h3>
+            <h3>{{post.number_of_comments}} Comments</h3>
         </div>
     </div>
 

@@ -11,6 +11,20 @@
 
 </div>
 
+<hr>
 
 
+<h6 class="sidebar-title">
+    Popular Posts
+</h6>
 
+<div class="row">
+ {% for popular in popular_posts %}
+
+
+<span> <a href="{% url 'post_detail' popular.slug %}">{{ popular }}</a></span>
+
+
+{% endfor %}
+
+</div>

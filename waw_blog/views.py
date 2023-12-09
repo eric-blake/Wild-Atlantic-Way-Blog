@@ -8,8 +8,11 @@ from django.core.paginator import Paginator
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.db.models import Count
 
 
+
+# Learned concept of how to filter posts from tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
 def post_filter(request, category_slug=None):
     context = {}
     posts = Post.objects.filter(status=1)
@@ -38,10 +41,14 @@ def blog(request):
     paginator = Paginator(posts, 4) 
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
+    #popular_posts = Post.objects.filter(status=1).order_by('-like_count')
+    popular_posts = Post.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:5]
+ 
 
     context = {
         'posts': posts,
         'categories': categories,
+        'popular_posts' : popular_posts,
            
     }
     return render(request, 'index.html', context)
