@@ -84,3 +84,16 @@ ul {
 .page-btn {
     font-size: medium;
 }
+
+
+
+/* media queries for sidebar */
+@media screen and (min-width:1300px) {
+   .btn-group-vertical {
+    max-width: 75%;
+   }
+
+@media screen and (min-width:1750px) {
+    .btn-group-vertical {
+        max-width: 50%;
+    }
