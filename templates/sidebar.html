@@ -29,13 +29,29 @@
     Popular Posts
 </h6>
 
-
-<div class="row">
-    <div class="col-12 btn-group-vertical">
         {% for popular in popular_posts %}
 
-        <a class="btn btn-outline-secondary m-1" href="{% url 'post_detail' popular.slug %}">{{ popular }}</a>
+        <a class="media align-items-center" href="{% url 'post_detail' popular.slug %}">
+       
+        <div class="row">
 
+        <div class="col-lg-12 col-xl-5">
+        {% if "placeholder" in popular.featured_image.url %}
+        <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg"
+            class="card-img-end img-fluid p-0 m-1" width="100%">
+        {% else %}
+        <img class="card-img-end img-fluid p-0 m-1" width="100%" src="{{ popular.featured_image.url}}" />
+        {% endif %}
+        </div>
+
+        <div class="col-lg-12 col-xl-7 p-1 d-flex align-items-center justify-content-center popular">
+        <p class="align-content-center">
+            {{ popular.title }}
+        </p>
+        </div>
+
+        </div>  
         {% endfor %}
-    </div>
-</div>
+        </a>
+
+    
