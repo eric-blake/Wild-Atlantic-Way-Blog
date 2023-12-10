@@ -33,8 +33,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-eric-blake-wild-atlantic-qvlosoy6sv.us2.codeanyapp.com',
-                 'localhost', 'wild-atlantic-way.herokuapp.com', '8000-eric-blake-wild-atlantic-67dbyi50c9.us2.codeanyapp.com', 'https://wild-atlantic-way-3e7628ad0fc2.herokuapp.com/']
+if development:
+    ALLOWED_HOSTS = [
+        'localhost', 'http://8000-eric-blake-django-blog-p7lyinjgwy.us2.codeanyapp.com/admin/',  '8000-eric-blake-django-blog-p7lyinjgwy.us2.codeanyapp.com', 'https://codestar2021-eb-540ac82e2585.herokuapp.com/']
+        'localhost', 'http://8000-eric-blake-django-blog-p7lyinjgwy.us2.codeanyapp.com/admin/',  '8000-eric-blake-django-blog-p7lyinjgwy.us2.codeanyapp.com', 'https://git.heroku.com/codestar2021-eb.git']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
 
 
 # Application definition
