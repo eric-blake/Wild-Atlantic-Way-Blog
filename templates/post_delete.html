@@ -6,19 +6,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+
+            <div class="card" style="max-width: 40rem;">
+                <div class="card-header">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
-                    <h1>Delete Post</h1>
-                    
-                <input type="submit" value="Delete" class="btn btn-lg btn-secondary my-3">
-                </div>
+                <h2>Are you sure you want to delete the post <span>"{{ post.title }}"</span>?</h2>  
 
+                <input type="submit" value="Delete" class="btn btn-lg btn-danger my-3">
+                <span><a class="btn btn-lg btn-secondary" href="{% url 'home' %}">Go Back</a>
+                <form method="POST"></span>
+                </div>
             </form>
 
-          
+            </div>
         </div>
     </div>
 </div>
 
-{%endblock%}
+{% endblock content %}
+
+
