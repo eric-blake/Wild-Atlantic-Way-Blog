@@ -38,7 +38,7 @@ class Post(models.Model):
     activity = models.TextField(max_length=200, default='')
     travel_advice = models.TextField(default='')
     getting_there = models.TextField(default='')
-    duration = models.IntegerField(default=0)
+    duration = models.PositiveIntegerField(default=0)
 
 
     class Meta:
