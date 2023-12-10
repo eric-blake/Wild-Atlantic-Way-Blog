@@ -86,16 +86,36 @@ ul {
 }
 
 
+.btn-cat {
+    background-color: #fff;
+}
+
+
 
 /* media queries for sidebar */
-@media screen and (min-width:1300px) {
+@media screen and (min-width:1400px) {
+
    .btn-group-vertical {
     max-width: 75%;
    }
 
-   .
+   .pop-left {
+    max-width: 50%;
+    
+   }
+
+   .pop-right {
+    max-width: 50%;
+    justify-content: flex-start;
+    display: inline-flex;
+   }
+   
+
+   }
+
 
 @media screen and (min-width:1750px) {
     .btn-group-vertical {
         max-width: 50%;
+        
     }
