@@ -1,1 +1,1 @@
-web: gunicorn wildatlanticway.wsgi
+web: gunicorn wildatlanticway.wsgi:application
