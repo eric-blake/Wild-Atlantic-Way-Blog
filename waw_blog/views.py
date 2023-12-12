@@ -9,6 +9,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.db.models import Count
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 
@@ -61,7 +62,7 @@ def blog(request):
     return render(request, 'index.html', context)
 
 
-class PostDetail(HitCountDetailView):
+class PostDetail(LoginRequiredMixin, HitCountDetailView):
     model = Post
     count_hit = True
  
@@ -133,7 +134,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):
     """
     Logged in user can create a post
     """
@@ -149,7 +150,7 @@ class PostCreate(CreateView):
         return super().form_valid(form)
         
 
-class PostUpdate(UpdateView):
+class PostUpdate(LoginRequiredMixin, UpdateView):
     """
     Logged in user can update their own post
     """
@@ -167,7 +168,7 @@ class PostUpdate(UpdateView):
 
 # Source https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview
 
-class PostDelete(DeleteView):
+class PostDelete(LoginRequiredMixin, DeleteView):
     """
     Logged in user can delete their own post
     """
