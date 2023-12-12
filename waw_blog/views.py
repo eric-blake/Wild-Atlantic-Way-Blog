@@ -17,7 +17,7 @@ def about(request):
     return render(request, 'about.html')
 
 
-# Learned concept of how to filter posts from tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
+#Source:  Learned concept of how to filter posts from tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
 def post_filter(request, category_slug=None):
     """
     Filter the posts by category
@@ -165,6 +165,7 @@ class PostUpdate(UpdateView):
         return super().form_valid(form)
 
 
+# Source https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview
 
 class PostDelete(DeleteView):
     """
@@ -174,12 +175,11 @@ class PostDelete(DeleteView):
     form_class = PostForm
     template_name = 'post_delete.html'
     success_url = reverse_lazy('home')
+    success_message = "Your post was deleted successfully."
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        success_message = "Your post has been deleted successully."
-        messages.add_message(self.request, messages.SUCCESS, success_message)
-        return super().form_valid(form)
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message, 'danger')
+        return super(PostDelete, self).delete(request, *args, **kwargs)
 
 
 
