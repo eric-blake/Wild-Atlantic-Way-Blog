@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Post, Categories
 from .forms import CommentForm, PostForm
-from hitcount.views import HitCountDetailView, HitCountMixin
 from django.core.paginator import Paginator
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -62,10 +61,8 @@ def blog(request):
     return render(request, 'index.html', context)
 
 
-class PostDetail(LoginRequiredMixin, HitCountDetailView):
-    model = Post
-    count_hit = True
- 
+class PostDetail(LoginRequiredMixin, View):
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
