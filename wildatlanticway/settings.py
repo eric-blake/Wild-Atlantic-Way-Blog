@@ -31,8 +31,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
+
+X_FRAME_OPTIONS = 'SAMEORIGIN' 
 
 ALLOWED_HOSTS = ['8000-eric-blake-wild-atlantic-qvlosoy6sv.us2.codeanyapp.com',
                  'localhost', 'wild-atlantic-way.herokuapp.com', '8000-eric-blake-wild-atlantic-67dbyi50c9.us2.codeanyapp.com', 'wild-atlantic-way-c6d960b228a8.herokuapp.com']
