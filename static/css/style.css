@@ -5,6 +5,8 @@
 
 body, .card-account{
     background-color: rgba(240, 238, 238);
+    font-family: karla, sans-serif;
+    font-weight: 300;
 }
 
 
@@ -12,6 +14,19 @@ body, .card-account{
 
     background-color: white;
 }
+
+#logo {
+    font-weight: 600;
+}
+
+
+/* 
+Headings */
+h1, h2,h3,h4,h5,h6 {
+    font-family: lato, sans-serif;
+}
+
+
 
 /* Card */
 
@@ -90,7 +105,16 @@ ul {
     background-color: #fff;
 }
 
+.highlight {
+    color: red;
+    background-color:yellowgreen
+}
 
+
+#btn-cat:hover {
+    border-color: orange;
+    border-width: 5px;
+}
 
 /* media queries for sidebar */
 @media screen and (min-width:1400px) {
