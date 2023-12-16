@@ -98,7 +98,7 @@ Post Detail page |![Post detail page image](static/images/wireframes/wireframe-p
 
 The database model diagram was designed using Microsoft Visio
 
-'![Screenshot of flowchart](static/images/ERD.PNG)'
+'![Screenshot of flowchart](static/images/entity-relationship-diagram.PNG)'
 
 #### Post Model
 
@@ -135,32 +135,36 @@ The fonts used through out are Lato and Karla. These are a sans-serif fonts that
 
 The navbar is basic so that it is very easy for the user to read.  The name of the website is the top left hand corner - Wild Atlantic Way Travel Blog. There are links to Home, About, Register and Login pages for all users. If the user is not signed in, the sign in and register links are visible on the navbar.
 
-![Navbar for user not signed in](/documentation/images/navbar.png)
+![Navbar for user not signed in](/static/images/nav-1.PNG)  
 
 If the user is signed in, then there is a Logout link visible and a Create Post link.
 
-![Navbar for user not signed in](/documentation/images/)
-
-The page that is being viewed is highlighted in the navbar so that the user can see easily what page they are on.
+![Navbar for user not signed in](/static/images/nav-2.PNG)
 
 In mobile view the navbar is collapsed into a hamburger icon, which when clicked shows the same information as in desktop view.
 
-![Mobile Navbar](/documentation/images/)
+![Mobile Navbar](/static/images/nav-3.PNG)
 
-![Mobile Navbar for not signed in user](/documentation/image)
+![Mobile Navbar for not signed in user](/static/images/nav-4.PNG)
 
-![Mobile Navbar for signed in user](/documentation/images/hg)
+![Mobile Navbar for signed in user](/static/images/nav-5.PNG)
 
 #### Footer
 
 The footer is simple layout with displaying social media options.  When an icon is clicked, it opens in a new tab so that the user still has the main site open.
 
-![Footer](/documentation/images/)
+![Footer](/static/images/footer.PNG)
 
 #### Sidebar
 
-* Categories
-* Popular posts
+The sidebar contains the categories filter and the popular post list. 
+
+Clicking on a category will filter the post list by the selected category.
+![Categories](/static/images/categories.PNG)
+
+Clicking on a post in the popular post list will open the post detail page.
+![Popular posts](/static/images/footer.PNG)
+
 
 #### About
 
