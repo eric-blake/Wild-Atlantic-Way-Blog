@@ -61,7 +61,7 @@ def blog(request):
     return render(request, 'index.html', context)
 
 
-class PostDetail(LoginRequiredMixin, View):
+class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -151,7 +151,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
         
 
-class PostUpdate(LoginRequiredMixin, UpdateView):
+class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     Logged in user can update their own post
     """
@@ -169,7 +169,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
 
 # Source https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview
 
-class PostDelete(LoginRequiredMixin, DeleteView):
+class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     Logged in user can delete their own post
     """
