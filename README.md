@@ -35,7 +35,7 @@ Registered users can create, update and delete their own post. They can also lea
 
 #### Registered User would like to
 
-- Sign into their user account
+* Sign into their user account
 * View posts and leave comments and likes
 * Create their own post
 * Edit and delete their own posts only
@@ -43,7 +43,7 @@ Registered users can create, update and delete their own post. They can also lea
 
 #### Site Owner would like to
 
-- Restrict access to non-registered users
+* Restrict access to non-registered users
 * Control users posts and comments for inappropriate use of the site. All posts and comments must be approved by Admin before they are live on the site
 
 ### Agile Development Tool
@@ -72,14 +72,14 @@ I used Github Issues to record the following user stories:
 
 #### Should-Have
 
-- [USER STORY: View popular posts in sidebar](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/14)
+* [USER STORY: View popular posts in sidebar](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/14)
 * [USER STORY: View number of comments](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/13)
 
 #### Could-Have
 
 #### Wont-Have
 
-- [USER STORY: Blog views](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/12)
+* [USER STORY: Blog views](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/12)
 
 ## UX design
 
@@ -122,7 +122,7 @@ The database model diagram was designed using Microsoft Visio
 
 ### Fonts
 
-- The fonts used through out are Lato and Karla. These are a sans-serif fonts that are part of the Google font collection. They are professional and very readable fonts.
+* The fonts used through out are Lato and Karla. These are a sans-serif fonts that are part of the Google font collection. They are professional and very readable fonts.
 
 ## Features
 
@@ -130,22 +130,21 @@ The database model diagram was designed using Microsoft Visio
 
 
 #### Admin Page
-![Navbar for user not signed in](/static/images/admin-page.PNG)  
+![Admin page](/static/images/admin-page.PNG)  
 
 
 #### Navbar
 
-- The navbar is basic so that it is very easy for the user to read.  The name of the website is the top left hand corner - Wild Atlantic Way Travel Blog. There are links to Home, About, Register and Login pages for all users. If the user is not signed in, the sign in and register links are visible on the navbar.
+* The navbar is basic so that it is very easy for the user to read.  The name of the website is the top left hand corner. There are links to Home, About, Register and Login pages for all users. If the user is not signed in, the sign in and register links are visible on the navbar.
 
 
 ![Navbar for user not signed in](/static/images/nav-1.PNG)  
 
-
-- If the user is signed in, then there is a Logout link visible and a Create Post link.
+* If the user is signed in, then there is a Logout link visible and a Create Post link.
 
 ![Navbar for user not signed in](/static/images/nav-2.PNG)
 
-- In mobile view the navbar is collapsed into a hamburger icon, which when clicked shows the same information as in desktop view.
+* In mobile view the navbar is collapsed into a hamburger icon, which when clicked shows the same information as in desktop view.
 
 ![Mobile Navbar](/static/images/nav-3.PNG)
 
@@ -155,95 +154,116 @@ The database model diagram was designed using Microsoft Visio
 
 #### Footer
 
-- The footer is simple layout with displaying social media options.  When an icon is clicked, it opens in a new tab so that the user still has the main site open.
+* The footer is simple layout with displaying social media options.  When an icon is clicked, it opens in a new tab so that the user still has the main site open.
 
 ![Footer](/static/images/footer.PNG)
 
 #### Sidebar
 
-- The sidebar contains the categories filter and the popular post list. 
+* The sidebar contains the categories filter and the popular post list.
 
-- Clicking on a category will filter the post list by the selected category.
+* Clicking on a category will filter the post list by the selected category.
+  
 ![Categories](/static/images/categories.PNG)
 
-
-- Clicking on a post in the popular post list will open the post detail page.
+* Clicking on a post in the popular post list will open the post detail page.
+  
 ![Popular posts](/static/images/footer.PNG)
 
 
 #### About
 
-- The about page is a simple page with text outlining the purpose of the site and an the contact details.
+* The about page is a simple page with text outlining the purpose of the site and an the contact details.
+  
 ![About](/static/images/popular-posts.PNG)
 
 #### Register 
 
-- The form enables users to register for an account
+* The form enables users to register for an account.
+
 ![Register](/static/images/register.PNG)
 
 #### Sign-in 
 
-- The form enables users to register for an account
+* The form enables users to register for an account.
+  
 ![Sign-in](/static/images/sign-in.PNG)
-
 
 #### Sign-out
 
-- The form enables users to register for an account
+* The form enables users to register for an account.
 ![Sign-out](/static/images/sign-out.PNG)
 
 
 #### Create Post
-- The form enables a signed in user to create a new post
+
+* The form enables a signed in user to create a new post.
+  
 ![Sign-out](/static/images/add-post.PNG)
 
 
 #### Update and Delele post
-- A signed in user has access to the edit and delete buttons for their own posts. 
+
+* A signed in user has access to the edit and delete buttons for their own posts. 
+  
 ![ Update and delele post](/static/images/edit-delete.PNG)
 
-- A signed in not singed in will not have access to the edit and delete buttons. 
+* A signed in not singed in will not have access to the edit and delete buttons.
+
 ![ Update and delele post](/static/images/edit-delete-2.PNG)
 
 #### Update Post
-- When a user clicks on edit on the post list page they wull be redirected to the post form. The form will display the post details and the user can update details as required. 
+
+* When a user clicks on edit on the post list page they wull be redirected to the post form. The form will display the post details and the user can update details as required. 
+
 ![Update post](/static/images/update-post.PNG)
 
-- After making the required updates, the user will need to click on the update button to make the changes pernament.
+* After making the required updates, the user will need to click on the update button to make the changes pernament.
+
 ![Update button](/static/images/update-button.PNG)
 
 #### Confirm Delete Post
-- When the user clicks on the delete button they will be taken to teh confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
+
+* When the user clicks on the delete button they will be taken to teh confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
+
 ![Sign-out](/static/images/delete-post.PNG)
 
 
 #### Comment form
-- A signed in user can leave comments on all posts.
+
+* A signed in user can leave comments on all posts.
+ 
 ![Leave comment](/static/images/comment-form.PNG)
 
-- After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
+* After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
+
 ![Comment approval](/static/images/comment-waiting.PNG)
 
-- All users can see a list of previously approved comments
+* All users can see a list of previously approved comments
+  
 ![Comment list](/static/images/comment-list.PNG)
 
-- All users can see the comment count for each post
+* All users can see the comment count for each post
+ 
 ![Comment count](/static/images/comment-count.PNG)
 
 
 #### Like post
-- Signed in users can like a post, or unlike a post they have liked. 
-- All users can see how many times a post has been liked.
 
+* Signed in users can like a post, or unlike a post they have liked. 
+* All users can see how many times a post has been liked.
 
-- An unliked post will be a regular heart
+* An unliked post will be a regular heart
+  
 ![Comment count](/static/images/unliked.PNG)
 
-- A liked post will be a solid heaart
+* A liked post will be a solid heaart
+  
 ![Comment count](/static/images/liked.PNG)
 
 
 ### Future Features
+
 * Number of page views per post
 * Social media login
 * Search Filters
@@ -264,43 +284,43 @@ The database model diagram was designed using Microsoft Visio
 * Framework used to build this project. Provides a built in admin panel and includes many helper template tags that make writing code quick and efficient.
 
 #### Django-Allauth
-- Used for User authenticaion (register, login and logout).
+* Used for User authenticaion (register, login and logout).
 
 #### Django Crispy Forms
-- Used to control rendering of Django forms.
+* Used to control rendering of Django forms.
 
 #### ElepantSQL
-- The database used by the deployed project on Heroku.
+* The database used by the deployed project on Heroku.
   
 #### psycopg2
-- PostgreSQL database adapter for the Python programming language.
+* PostgreSQL database adapter for the Python programming language.
 
 #### Gunicorn
-- Python HTTP server for WSGI applications.
+* Python HTTP server for WSGI applications.
 
 #### Summernote
-- WYSIWYG editor. Used for comment form.
+* WYSIWYG editor. Used for comment form.
 
 #### Cloudinary
-- The cloud platform used to store static media files.
+* The cloud platform used to store static media files.
 
 #### Mockflow
-- Used for the wireframes
+* Used for the wireframes
 
 #### Git
-- Used for version control.
+* Used for version control.
 
 #### CodeAnywhere
-- Used as the IDE to code this website.
+* Used as the IDE to code this website.
 
 #### Heroku
-- The cloud platform used to deploy the project in the live environment.
+* The cloud platform used to deploy the project in the live environment.
 
 #### Bootstrap
-- The front end development framework used for styling along with custom CSS.
+* The front end development framework used for styling along with custom CSS.
   
 #### Microsoft Visio
-- Used for the entity relationship diagram
+* Used for the entity relationship diagram
 
 
 ## Testing
@@ -332,7 +352,7 @@ No unfixed bugs
 
 ### Deployment
 
-* This project was deployed using Code Institutes mock Terminal for Heroku
+#### This project was deployed using Code Institutes mock Terminal for Heroku
 * Steps for Deployment
   * From Heroku Dashboard, select Create new app from the dropdown menu.
   * Add a unique app name and then choose a region closest to you (EU or USA).
