@@ -89,16 +89,16 @@ I have used Mockflow to create the following wireframes for both desktop and mob
 
 Page | Wireframe | 
 --- | --- | ---
-Home page | ![Home page image](/static/images/wireframes/wireframe-home.PNG) 
-About page |![About page image](static/images/wireframes/wireframe-about.PNG) 
-Post Detail page |![Post detail page image](static/images/wireframes/wireframe-post-detail.PNG)
+Home page | ![Home page image](/static/images/wireframes/wireframe-home.PNG) |
+About page |![About page image](static/images/wireframes/wireframe-about.PNG) |
+Post Detail page |![Post detail page image](static/images/wireframes/wireframe-post-detail.PNG) |
 
 
 
 ### Structure & Logical Flow
 
 A
-'![Screenshot of flowchart](assets/documentation/flow-chart.PNG)'
+'![Screenshot of flowchart](static/images/ERD.PNG)'
 
 ### Colour Scheme
 
