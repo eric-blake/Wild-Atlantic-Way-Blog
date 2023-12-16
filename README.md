@@ -98,7 +98,7 @@ Post Detail page |![Post detail page image](static/images/wireframes/wireframe-p
 
 The database model diagram was designed using Microsoft Visio
 
-'![Screenshot of flowchart](static/images/entity-relationship-diagram.PNG)'
+![Screenshot of flowchart](static/images/entity-relationship-diagram.PNG)
 
 #### Post Model
 
@@ -208,7 +208,7 @@ The database model diagram was designed using Microsoft Visio
   
 ![ Update and delele post](/static/images/edit-delete.PNG)
 
-* A signed in not singed in will not have access to the edit and delete buttons.
+* A user that in not singed in will not have access to the edit and delete buttons.
 
 ![ Update and delele post](/static/images/edit-delete-2.PNG)
 
@@ -224,7 +224,7 @@ The database model diagram was designed using Microsoft Visio
 
 #### Confirm Delete Post
 
-* When the user clicks on the delete button they will be taken to teh confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
+* When the user clicks on the delete button they will be taken to the confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
 
 ![Sign-out](/static/images/delete-post.PNG)
 
@@ -235,7 +235,7 @@ The database model diagram was designed using Microsoft Visio
  
 ![Leave comment](/static/images/comment-form.PNG)
 
-* After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
+* After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comment before it is visible on the site.
 
 ![Comment approval](/static/images/comment-waiting.PNG)
 
