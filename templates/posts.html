@@ -13,7 +13,7 @@
 
 
         <div class="col-xl-6 card-body d-flex flex-column">
-            <p class="card-text"> {{post.created_on|date}}</p>
+            <p class="card-text"> {{post.created_on|date}} |  Author: {{post.author}}</p>
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 <h2 class="card-title">{{ post.title }}</h2>
                 <p class="card-text">{{ post.excerpt }}</p>

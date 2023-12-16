@@ -8,7 +8,6 @@
 <div class="container">
     <div class="row text-center">
         <div class="col-m-6">
-
             <div class="row">
                 <div class="col-3">
                     <h4>
@@ -21,10 +20,7 @@
                 </div>
             </div>
 
-
-            <p>{{post.created_on|date}} | {{post.category}}</p>
-
-
+            <p>{{post.created_on|date}} |  {{post.author}}</p>
 
             <div class="col-m-6">
                 {% if "placeholder" in post.featured_image.url %}
@@ -34,15 +30,11 @@
                 {% endif %}
             </div>
 
-
-            <p>{{post.author}}</p>
-
             <p class="card-text">
                 {{post.content | safe }}
             </p>
         </div>
     </div>
-
 </div>
 
 <hr>
@@ -72,11 +64,8 @@
             <!-- Number of likes -->
             <span>{{ post.number_of_likes}}</span>
 
-
         </div>
-
     </div>
-
 </div>
 
 <hr>
