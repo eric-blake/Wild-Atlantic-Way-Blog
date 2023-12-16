@@ -130,15 +130,16 @@ The database model diagram was designed using Microsoft Visio
 
 
 #### Admin Page
+![Navbar for user not signed in](/static/images/admin-page.PNG)  
+
 
 #### Navbar
 
 - The navbar is basic so that it is very easy for the user to read.  The name of the website is the top left hand corner - Wild Atlantic Way Travel Blog. There are links to Home, About, Register and Login pages for all users. If the user is not signed in, the sign in and register links are visible on the navbar.
 
 
-<div align="center">
 ![Navbar for user not signed in](/static/images/nav-1.PNG)  
-</div>
+
 
 - If the user is signed in, then there is a Logout link visible and a Create Post link.
 
@@ -162,10 +163,9 @@ The database model diagram was designed using Microsoft Visio
 
 - The sidebar contains the categories filter and the popular post list. 
 
-<div align="center">
 - Clicking on a category will filter the post list by the selected category.
 ![Categories](/static/images/categories.PNG)
-</div>
+
 
 - Clicking on a post in the popular post list will open the post detail page.
 ![Popular posts](/static/images/footer.PNG)
@@ -202,29 +202,32 @@ The database model diagram was designed using Microsoft Visio
 - A signed in user has access to the edit and delete buttons for their own posts. 
 ![ Update and delele post](/static/images/edit-delete.PNG)
 
+- A signed in not singed in will not have access to the edit and delete buttons. 
+![ Update and delele post](/static/images/edit-delete-2.PNG)
+
 #### Update Post
-When a user clicks on edit on the post list page they wull be redirected to the post form. The form will display the post details and the user can update details as required. 
+- When a user clicks on edit on the post list page they wull be redirected to the post form. The form will display the post details and the user can update details as required. 
 ![Update post](/static/images/update-post.PNG)
 
-After making the required updates, the user will need to click on the update button to make the changes pernament.
+- After making the required updates, the user will need to click on the update button to make the changes pernament.
 ![Update button](/static/images/update-button.PNG)
 
 #### Confirm Delete Post
-When the user clicks on the delete button they will be taken to teh confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
+- When the user clicks on the delete button they will be taken to teh confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
 ![Sign-out](/static/images/delete-post.PNG)
 
 
 #### Comment form
-A signed in user can leave comments on all posts.
+- A signed in user can leave comments on all posts.
 ![Leave comment](/static/images/comment-form.PNG)
 
-After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
+- After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
 ![Comment approval](/static/images/comment-waiting.PNG)
 
-All users can see a list of previously approved comments
+- All users can see a list of previously approved comments
 ![Comment list](/static/images/comment-list.PNG)
 
-All users can see the comment count for each post
+- All users can see the comment count for each post
 ![Comment count](/static/images/comment-count.PNG)
 
 
@@ -233,46 +236,72 @@ All users can see the comment count for each post
 - All users can see how many times a post has been liked.
 
 
-An unliked post will be a regular heart
+- An unliked post will be a regular heart
 ![Comment count](/static/images/unliked.PNG)
 
-A liked post will be a solid heaart
+- A liked post will be a solid heaart
 ![Comment count](/static/images/liked.PNG)
 
 
 ### Future Features
-
-#### Number of page views per post
-
-#### Social media login
-
+* Number of page views per post
+* Social media login
+* Search Filters
 
 
 ## Technologies Used
 
 ### Coding languages used
 
-- HTML
+* HTML
 * CSS
 * Python
 * JavaScript
 
 ### Frameworks and Libraries used
 
+#### Django
+* Framework used to build this project. Provides a built in admin panel and includes many helper template tags that make writing code quick and efficient.
 
-### External resources
+#### Django-Allauth
+- Used for User authenticaion (register, login and logout).
 
-* Microsoft Visio was used for the Flowchart.
-* Heroku: Heroku is used to deploy the programme in the form of an app. This is supported by the Code Institute template that allows a python terminal to be run using a web page.
-* Code Anywhere was used as the IDE to code the website.
-* Code Institute template - To run the game in the terminal using Heroku.
+#### Django Crispy Forms
+- Used to control rendering of Django forms.
 
-### Libraries Used
+#### ElepantSQL
+- The database used by the deployed project on Heroku.
+  
+#### psycopg2
+- PostgreSQL database adapter for the Python programming language.
 
-* (random) was used to generate column number for the computers move.
-* (time) was used to pause between player move and computer move.
-* (sys) was used for the print slow function.
-* (os) was used for the clear function.
+#### Gunicorn
+- Python HTTP server for WSGI applications.
+
+#### Summernote
+- WYSIWYG editor. Used for comment form.
+
+#### Cloudinary
+- The cloud platform used to store static media files.
+
+#### Mockflow
+- Used for the wireframes
+
+#### Git
+- Used for version control.
+
+#### CodeAnywhere
+- Used as the IDE to code this website.
+
+#### Heroku
+- The cloud platform used to deploy the project in the live environment.
+
+#### Bootstrap
+- The front end development framework used for styling along with custom CSS.
+  
+#### Microsoft Visio
+- Used for the entity relationship diagram
+
 
 ## Testing
 
