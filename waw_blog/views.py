@@ -20,7 +20,7 @@ def about(request):
 #Source:  Learned concept of how to filter posts from tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
 def post_filter(request, category_slug=None):
     """
-    Filter the posts by category
+    Filters the posts by category
     """
     context = {}
     posts = Post.objects.filter(status=1)
@@ -43,6 +43,9 @@ def post_filter(request, category_slug=None):
 
 
 def blog(request):
+    """
+    Lists all posts and categories on home page
+    """
     context = {}
     posts = Post.objects.filter(status=1).order_by("-created_on")
     categories = Categories.objects.all()
@@ -62,7 +65,9 @@ def blog(request):
 
 
 class PostDetail(View):
-
+    """
+    Lists single post details
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
