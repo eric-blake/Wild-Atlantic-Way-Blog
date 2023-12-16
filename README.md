@@ -94,13 +94,11 @@ About page |![About page image](static/images/wireframes/wireframe-about.PNG)
 Post Detail page |![Post detail page image](static/images/wireframes/wireframe-post-detail.PNG) 
 
 
-
 ### Structure & Logical Flow
 
 The database model diagram was designed using Microsoft Visio
 
 '![Screenshot of flowchart](static/images/ERD.PNG)'
-
 
 #### Post Model
 
@@ -117,19 +115,19 @@ The database model diagram was designed using Microsoft Visio
 * This is a custom model that enable users to see a list of categories.
 * Users can filter popsts by category
 
-
 ### Colour Scheme
 
-* The background colours
+* The background colours is form of grey - rgba(240, 238, 238).
+* The buttons use the standard bootstrap secondary button color.
 
 ### Fonts
 
-[Lato](link)
-[Karla](link)
+The fonts used through out are Lato and Karla. These are a sans-serif fonts that are part of the Google font collection. They are professional and very readable fonts.
 
 ## Features
 
 ### Existing Features
+
 
 #### Admin Page
 
