@@ -167,18 +167,60 @@ Clicking on a post in the popular post list will open the post detail page.
 
 
 #### About
+The about page is a simple page with text outlining the purpose of the site and an the contact details.
+![About](/static/images/popular-posts.PNG)
 
-#### Login and Register Pages
+#### Register 
+
+The form enables users to register for an account
+![Register](/static/images/register.PNG)
+
+#### Sign-in 
+
+The form enables users to register for an account
+![Sign-in](/static/images/sign-in.PNG)
+
+
+#### Sign-out
+
+The form enables users to register for an account
+![Sign-out](/static/images/sign-out.PNG)
+
 
 #### Create Post
+The form enables a signed in user to create a new post
+![Sign-out](/static/images/add-post.PNG)
 
-#### Edit Post
 
-#### Delete Post
+#### Update and Delele post
+A signed in user has access to the edit and delete buttons for their own posts. 
+![ Update and delele post](/static/images/edit-delete.PNG)
 
-#### Confirm Delete Pages
+#### Update Post
+When a user clicks on edit on the post list page they wull be redirected to the post form. The form will display the post details and the user can update details as required. 
+![Update post](/static/images/update-post.PNG)
+
+After making the required updates, the user will need to click on the update button to make the changes pernament.
+![Update button](/static/images/update-button.PNG)
+
+#### Confirm Delete Post
+When the user clicks on the delete button they will be taken to teh confirm delete post page. The user can click on delete to pernamently delete the post, or click on back to return to the post list page. 
+![Sign-out](/static/images/delete-post.PNG)
+
 
 #### Comment form
+A signed in user can leave commments on all posts.
+![Leave comment](/static/images/comment-form.PNG)
+
+After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
+![Comment approval](/static/images/comment-waiting.PNG)
+
+All users can see a list of previously approved comments
+![Comment list](/static/images/comment-list.PNG)
+
+All users can see the comment count for each post
+![Comment count](/static/images/comment-count.PNG)
+
 
 #### Like post
 
