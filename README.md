@@ -122,7 +122,7 @@ The database model diagram was designed using Microsoft Visio
 
 ### Fonts
 
-The fonts used through out are Lato and Karla. These are a sans-serif fonts that are part of the Google font collection. They are professional and very readable fonts.
+- The fonts used through out are Lato and Karla. These are a sans-serif fonts that are part of the Google font collection. They are professional and very readable fonts.
 
 ## Features
 
@@ -133,15 +133,18 @@ The fonts used through out are Lato and Karla. These are a sans-serif fonts that
 
 #### Navbar
 
-The navbar is basic so that it is very easy for the user to read.  The name of the website is the top left hand corner - Wild Atlantic Way Travel Blog. There are links to Home, About, Register and Login pages for all users. If the user is not signed in, the sign in and register links are visible on the navbar.
+- The navbar is basic so that it is very easy for the user to read.  The name of the website is the top left hand corner - Wild Atlantic Way Travel Blog. There are links to Home, About, Register and Login pages for all users. If the user is not signed in, the sign in and register links are visible on the navbar.
 
+
+<div align="center">
 ![Navbar for user not signed in](/static/images/nav-1.PNG)  
+</div>
 
-If the user is signed in, then there is a Logout link visible and a Create Post link.
+- If the user is signed in, then there is a Logout link visible and a Create Post link.
 
 ![Navbar for user not signed in](/static/images/nav-2.PNG)
 
-In mobile view the navbar is collapsed into a hamburger icon, which when clicked shows the same information as in desktop view.
+- In mobile view the navbar is collapsed into a hamburger icon, which when clicked shows the same information as in desktop view.
 
 ![Mobile Navbar](/static/images/nav-3.PNG)
 
@@ -151,49 +154,52 @@ In mobile view the navbar is collapsed into a hamburger icon, which when clicked
 
 #### Footer
 
-The footer is simple layout with displaying social media options.  When an icon is clicked, it opens in a new tab so that the user still has the main site open.
+- The footer is simple layout with displaying social media options.  When an icon is clicked, it opens in a new tab so that the user still has the main site open.
 
 ![Footer](/static/images/footer.PNG)
 
 #### Sidebar
 
-The sidebar contains the categories filter and the popular post list. 
+- The sidebar contains the categories filter and the popular post list. 
 
-Clicking on a category will filter the post list by the selected category.
+<div align="center">
+- Clicking on a category will filter the post list by the selected category.
 ![Categories](/static/images/categories.PNG)
+</div>
 
-Clicking on a post in the popular post list will open the post detail page.
+- Clicking on a post in the popular post list will open the post detail page.
 ![Popular posts](/static/images/footer.PNG)
 
 
 #### About
-The about page is a simple page with text outlining the purpose of the site and an the contact details.
+
+- The about page is a simple page with text outlining the purpose of the site and an the contact details.
 ![About](/static/images/popular-posts.PNG)
 
 #### Register 
 
-The form enables users to register for an account
+- The form enables users to register for an account
 ![Register](/static/images/register.PNG)
 
 #### Sign-in 
 
-The form enables users to register for an account
+- The form enables users to register for an account
 ![Sign-in](/static/images/sign-in.PNG)
 
 
 #### Sign-out
 
-The form enables users to register for an account
+- The form enables users to register for an account
 ![Sign-out](/static/images/sign-out.PNG)
 
 
 #### Create Post
-The form enables a signed in user to create a new post
+- The form enables a signed in user to create a new post
 ![Sign-out](/static/images/add-post.PNG)
 
 
 #### Update and Delele post
-A signed in user has access to the edit and delete buttons for their own posts. 
+- A signed in user has access to the edit and delete buttons for their own posts. 
 ![ Update and delele post](/static/images/edit-delete.PNG)
 
 #### Update Post
@@ -209,7 +215,7 @@ When the user clicks on the delete button they will be taken to teh confirm dele
 
 
 #### Comment form
-A signed in user can leave commments on all posts.
+A signed in user can leave comments on all posts.
 ![Leave comment](/static/images/comment-form.PNG)
 
 After submitting a comment the user will receive a message informing them that their comment is awaiting approval. Site admin must approve comments before it is visible on the site.
@@ -223,12 +229,24 @@ All users can see the comment count for each post
 
 
 #### Like post
+- Signed in users can like a post, or unlike a post they have liked. 
+- All users can see how many times a post has been liked.
+
+
+An unliked post will be a regular heart
+![Comment count](/static/images/unliked.PNG)
+
+A liked post will be a solid heaart
+![Comment count](/static/images/liked.PNG)
+
 
 ### Future Features
 
 #### Number of page views per post
 
 #### Social media login
+
+
 
 ## Technologies Used
 
