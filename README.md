@@ -87,18 +87,36 @@ I used Github Issues to record the following user stories:
 
 I have used Mockflow to create the following wireframes for both desktop and mobile devices.
 
-Page | Wireframe | 
---- | --- | ---
-Home page | ![Home page image](/static/images/wireframes/wireframe-home.PNG) |
-About page |![About page image](static/images/wireframes/wireframe-about.PNG) |
-Post Detail page |![Post detail page image](static/images/wireframes/wireframe-post-detail.PNG) |
+Page | Wireframe 
+--- | --- 
+Home page | ![Home page image](/static/images/wireframes/wireframe-home.PNG) 
+About page |![About page image](static/images/wireframes/wireframe-about.PNG) 
+Post Detail page |![Post detail page image](static/images/wireframes/wireframe-post-detail.PNG) 
 
 
 
 ### Structure & Logical Flow
 
-A
+The database model diagram was designed using Microsoft Visio
+
 '![Screenshot of flowchart](static/images/ERD.PNG)'
+
+
+#### Post Model
+
+* The main model that contains all the fields needed for the blog posts.
+* This model is based on the "I think therefore I blog" walkthrough project. Some adjustments and additions were made to fit the needs of my project.
+
+#### Comment Model
+
+* Enable logged in users to add comments to different posts.
+* Is based on the "I think therefore I blog" walkthrough project.
+
+#### Category Model
+
+* This is a custom model that enable users to see a list of categories.
+* Users can filter popsts by category
+
 
 ### Colour Scheme
 
