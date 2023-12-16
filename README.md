@@ -87,9 +87,13 @@ I used Github Issues to record the following user stories:
 
 I have used Mockflow to create the following wireframes for both desktop and mobile devices.
 
-Page | Desktop Version | Mobile Version
+Page | Wireframe | 
 --- | --- | ---
-Home page | ![Desktop home page image](/) | ![Mobile home page image](/media/wireframes.png)
+Home page | ![Home page image](/static/images/wireframes/wireframe-home.PNG) 
+About page |![About page image](static/images/wireframes/wireframe-about.PNG) 
+Post Detail page |![Post detail page image](static/images/wireframes/wireframe-post-detail.PNG)
+
+
 
 ### Structure & Logical Flow
 
