@@ -6,30 +6,17 @@
 
 <!-- Post details -->
 <div class="container">
-    <div class="row text-center">
+    <div class="row">
         <div class="col-m-6">
-            <div class="row">
-                <div class="col-3">
-                    <h4>
-                        <a class="d-flex justify-content-start pt-2 text-secondary" aria-current="page"
-                            href="{% url 'home' %}">All Posts</a>
-                    </h4>
-                </div>
-                <div class="col-6">
-                    <h1>{{post.title}}</h1>
-                </div>
-            </div>
-
-            <p>{{post.created_on|date}} |  {{post.author}}</p>
-
-            <div class="col-m-6">
+            <h1 class="text-center mt-4">{{post.title}}</h1>
+            <p>{{post.created_on|date}} | Author: {{post.author}}</p>
+            <div class="col-m-6 mb-4">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg" width="100%">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
-
             <p class="card-text">
                 {{post.content | safe }}
             </p>
@@ -41,11 +28,9 @@
 
 
 <div class="container">
-
     <div class="row">
-
         <!-- Likes -->
-        <div class="col-1">
+        <div class="col-3">
             {% if user.is_authenticated %}
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
@@ -63,8 +48,21 @@
 
             <!-- Number of likes -->
             <span>{{ post.number_of_likes}}</span>
-
         </div>
+
+        <div class="col-6 text-center">
+            <h4>
+                <a class="text-secondary" aria-current="page" href="{% url 'home' %}">All
+                    Posts</a>
+            </h4>
+        </div>
+
+        <div class="col-3">
+            
+        </div>
+
+
+        
     </div>
 </div>
 
@@ -73,15 +71,9 @@
 <!-- comments -->
 
 <div class="container">
-
+   
     <div class="row">
-        <div>
-            <h3>{{comment_count}} Comments</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 card m-4">
+        <div class="col-xl-6 card order-xl-1 order-2">
             <div class='card-body'>
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
@@ -102,35 +94,42 @@
         </div>
 
         <!-- Additional information -->
-            <div class="col-md-4 mt-4">
+            <div class="col-xl-6 order-1 order-xl-2 mb-3">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Additional Information</h4>
+                    <div class="card-header">
+                        <h4>Additional Information</h4>
+                        </div>
+                        <div class="card-body">
                         <p class="card-text">
                         <ul>
-                            <li> <strong>Type of activity:</strong> {{ post.activity}}</li>
-                            <li> <strong>Getting there:</strong> {{post.getting_there}}</li>
-                            <li><strong>Duration:</strong> {{ post.duration}} hours</li>
+                            <li class="pb-2"> <strong>Type of activity:</strong> {{ post.activity}}</li>
+                            <li class="pb-2"> <strong>Getting there:</strong> {{post.getting_there}}</li>
+                            <li class="pb-2"><strong>Duration:</strong> {{ post.duration}} hours</li>
                             <li> <strong>Travel advice:</strong> {{ post.travel_advice}}</li>
                         </ul>
                         </p>
-                    </div>
                 </div>
             </div>
 
+         </div>
+    </div>
 
+    <div class="row mt-4">
+        <div>
+            <h3>{{comment_count}} Comments</h3>
+        </div>
     </div>
 
     {% for comment in comments %}
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
-            <div class="col-1">
+            <!-- <div class="col-1">
                 <img class="d-flex align-self-start mr-3 avatar-image"
                     src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png"
                     alt="avatar image">
-            </div>
-            <div class="col-6">
+            </div> -->
+            <div class="col">
                 <h5 class="mt-0">{{comment.name}}</h5>
                 <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h5>
                     <p> {{ comment.body | linebreaks}}</p>
