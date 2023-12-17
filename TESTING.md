@@ -56,8 +56,12 @@
       - [Login Page](#login-page-2)
       - [Post Detail Page (User Logged in)](#post-detail-page-user-logged-in)
       - [Create Post Page](#create-post-page-2)
+      - [Update Post Page](#update-post-page-2)
+      - [Delete post Page](#delete-post-page-2)
       - [Logout Page](#logout-page-2)
       - [Page](#page)
+  - [Browser Testing](#browser-testing)
+  - [Device Testing](#device-testing)
 
 ## Validator Testing
 
@@ -236,7 +240,7 @@ Only files with custom-written Python code have been verified with the CI python
 #### Pagination Page
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Posts per page        | Click      | Maximum of 4 posts per page                                        | Pass      |   
+| Posts per page        | Count      | Maximum of 4 posts per page                                        | Pass      |   
 | Next button           | Click      | Redirect to previous page                                          | Pass      |       
 | Previous button       | Click      | Redirect to previous page                                          | Pass      |       
 
@@ -266,9 +270,10 @@ Only files with custom-written Python code have been verified with the CI python
 
 #### Post Detail Page (User Logged in)
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|    Leave a comment  |      Type comment and click "Submit"    |           Message appears "Your comment is awaiting approval"            | Pass ![image]()     |   
-|    Like post  |          Click on heart icon                   |    Heart icon goes solid red and likes counter increments by 1  | Pass  |
-|   Unlike post   |      Click on heart icon    |      Heart icon returns to standard red icon and like counter decrements by 1              |  Pass    |   
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Leave a comment | Type comment and click "Submit"| Message appears "Your comment is awaiting approval" | Pass ![image]() |   
+| Like post  | Click on heart icon | Heart icon goes solid red and likes counter increments by 1 | Pass |
+| Unlike post| Click on heart icon | Heart icon returns to standard red icon and like counter decrements by 1 |  Pass  |   
 
 
 
@@ -282,6 +287,18 @@ Only files with custom-written Python code have been verified with the CI python
 
 
 
+####  Update Post Page
+| Feature               | Action     | Expected Result                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+|    Update post  | Update fields and click "Update         |      Message appears "Your post has been updated successfully"                      |  Pass    |   
+
+
+####  Delete post Page
+| Feature               | Action     | Expected Result                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+|   Delete own post   |    Click "Delete" on post list page"      |        Post delete confirmation page opens with button to "Delete" and "Go back"              |  Pass    |   
+|   Delete post|      Click "Delete" on delete confirmation page    |          Message appears "Your post was successfully deleted". Post is deleted from post list page               |  Pass    |   
+|   Go back  |  Click "Go back" button       |    The user is redirected to the home page                   |  Pass    |   
 
 
 #### Logout Page
@@ -292,8 +309,17 @@ Only files with custom-written Python code have been verified with the CI python
 
 
 
-
 ####  Page
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
 |      |          |                       |      |   
+
+
+
+## Browser Testing
+
+The project was tested extensively on Google Chrome, microsoft Edge and Safari browsers, where no browser compatibility issues arose.
+
+## Device Testing
+
+The project was tested on a multiple devices: iPhone, android tablet, 14" laptop and 24" monitor. The website was responsive on all devices.
