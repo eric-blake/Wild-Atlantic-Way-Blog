@@ -62,6 +62,7 @@
       - [Page](#page)
   - [Browser Testing](#browser-testing)
   - [Device Testing](#device-testing)
+  - [Bugs](#bugs)
 
 ## Validator Testing
 
@@ -323,3 +324,17 @@ The project was tested extensively on Google Chrome, microsoft Edge and Safari b
 ## Device Testing
 
 The project was tested on a multiple devices: iPhone, android tablet, 14" laptop and 24" monitor. The website was responsive on all devices.
+
+
+## Bugs
+
+There are no known bugs in the current deployment of the site. A number of bugs were found and fixed during development. A summary of these bugs is provided below:
+
+| Issue| Solution|Result|
+|-----|--------|-------|
+|    Create-post form allowed negative number for duration field      |     Update IntegerField to PositiveIntegerField in Post model                  |   Fixed   |
+|   Comment count was incrementing for unapproved comments                |   Change "commented" to True in PostDetail post context                 |   Fixed        |      
+|   Fix issue to prevent unregistered user directly accessing a page by the URL                |      Add LoginRequiredMixin to Post-Create, Post-Update and Post_Delete views               |       Fixed    |      
+|    Post detail page was not accessible to logged ut user               |        Removed LoginRequiredMixin  from PostDEtail view           |     Fixed      |      
+|        Delete-post success message was not appearing after post was deleted          |     Updated the delete method in the PostDelete view               | Fixed           |      
+|  
