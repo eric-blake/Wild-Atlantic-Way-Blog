@@ -160,7 +160,7 @@ The database model diagram was designed using Microsoft Visio
 
 #### Sidebar
 
-* The sidebar contains the categories filter and the popular post list.
+* The sidebar contains the categories filter and the popular post list. The sidebar is hidden on screens less than 992px.
 
 * Clicking on a category will filter the post list by the selected category.
   
