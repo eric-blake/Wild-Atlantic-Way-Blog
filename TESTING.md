@@ -51,10 +51,10 @@
     - [Base Page /  Header Page /  Footer Page / About page](#base-page---header-page---footer-page--about-page)
       - [Home Page / Sidebar Page / Categories Page](#home-page--sidebar-page--categories-page)
       - [Pagination Page](#pagination-page-2)
-      - [Post Detail Page - User not logged in](#post-detail-page---user-not-logged-in)
+      - [Post Detail Page (User logged out)](#post-detail-page-user-logged-out)
       - [Register Page](#register-page-2)
       - [Login Page](#login-page-2)
-      - [Post Detail Page - User logged in](#post-detail-page---user-logged-in)
+      - [Post Detail Page (User Logged in)](#post-detail-page-user-logged-in)
       - [Create Post Page](#create-post-page-2)
       - [Logout Page](#logout-page-2)
       - [Page](#page)
@@ -241,7 +241,7 @@ Only files with custom-written Python code have been verified with the CI python
 | Previous button       | Click      | Redirect to previous page                                          | Pass      |       
 
 
-#### Post Detail Page - User not logged in
+#### Post Detail Page (User logged out)
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
 | Open post detail |  Logout out and open post | Click anywhere on post opens the post                      | Pass      |   
@@ -264,17 +264,12 @@ Only files with custom-written Python code have been verified with the CI python
 |   Sign In without filling in the mandadory fields   |   Click "sign in" without filling in the mandadory fields        |      The user should get an error message: "Please fill out this field"                    |   Pass   |
 
 
-#### Post Detail Page - User logged in
+#### Post Detail Page (User Logged in)
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|    Leave a comment  |      Type comment and click "Submit"    |           Message appears "Your comment is awaiting approval"            |Pass ![image]()     |   
+|    Leave a comment  |      Type comment and click "Submit"    |           Message appears "Your comment is awaiting approval"            | Pass ![image]()     |   
 |    Like post  |          Click on heart icon                   |    Heart icon goes solid red and likes counter increments by 1  | Pass  |
 |   Unlike post   |      Click on heart icon    |      Heart icon returns to standard red icon and like counter decrements by 1              |  Pass    |   
-|      |          |                       |      |   
-|      |          |                       |      |   
-|      |          |                       |      |   
-|      |          |                       |      |   
-|      |          |                       |      |   
-|      |          |                       |      |   
+
 
 
 
@@ -283,7 +278,7 @@ Only files with custom-written Python code have been verified with the CI python
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
 | Create post     |    Fill in all fields and click "Create"      |     Message appears "Your post is awaiting approval"                        |   Pass   |   
 | Incomplete form  |       Leave one field blank and click "Create"   |          The user should get an error message: "Please fill out this field"               |   Pass   | 
-| Unique post title     |   Copy post title from post list page       |        The user should get an error message: "Post with this Title already exists"          |   Pass   |   
+| Unique post title     |   Copy post title from post list page       |        The user should get an error message: "Post with this Title already exists"          |  Pass    |   
 
 
 
