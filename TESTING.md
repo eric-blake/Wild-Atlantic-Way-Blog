@@ -214,7 +214,7 @@ Only files with custom-written Python code have been verified with the CI python
 ### Base Page /  Header Page /  Footer Page / About page
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Logo                  | Click      | Redirect to home                                                   | Fail      |
+| Logo                  | Click      | Redirect to home                                                   | Pass      |
 | Home                  | Click      | Redirect to home                                                   | Pass      |
 | About                 | Click      | Open About page                                                    | Pass      |
 | Register              | Click      | Open register page                                                 | Pass      |
