@@ -37,7 +37,9 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     comment_count = models.IntegerField(default=0)
-    category = models.ForeignKey(Categories, blank=True, null=True, on_delete=models.CASCADE, related_name="post_category")
+    category = models.ForeignKey(Categories, blank=True, null=True,
+                                 on_delete=models.CASCADE,
+                                 related_name="post_category")
     activity = models.TextField(max_length=200, default='')
     travel_advice = models.TextField(default='')
     getting_there = models.TextField(default='')
@@ -77,5 +79,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-

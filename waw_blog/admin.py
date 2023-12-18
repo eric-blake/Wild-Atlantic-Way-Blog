@@ -4,6 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 admin.site.register(Categories)
 
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug',  'status', 'author', 'created_on')
@@ -22,3 +23,4 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+

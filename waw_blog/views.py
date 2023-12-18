@@ -11,13 +11,13 @@ from django.db.models import Count
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
-
 def about(request):
     """ Returns about.html """
     return render(request, 'about.html')
 
 
-#Source:  Learned concept of how to filter posts from tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
+# Source:  Learned concept of how to filter posts from
+# tutorial https://www.youtube.com/watch?v=RfbukFYM0rM
 def post_filter(request, category_slug=None):
     """
     Filters the posts by category
@@ -29,17 +29,16 @@ def post_filter(request, category_slug=None):
     requested_category = None
     if category_slug:
         requested_category = get_object_or_404(categories, slug=category_slug)
-        posts = posts.filter(category__in =[requested_category])
+        posts = posts.filter(category__in=[requested_category])
 
-    paginator = Paginator(posts, 4) 
+    paginator = Paginator(posts, 4)
     page_number = request.GET.get("page")
-    
+
     context = {
         'posts': posts,
         'categories': categories,
     }
     return render(request, 'categories.html', context)
-
 
 
 def blog(request):
@@ -49,17 +48,16 @@ def blog(request):
     context = {}
     posts = Post.objects.filter(status=1).order_by("-created_on")
     categories = Categories.objects.all()
-    paginator = Paginator(posts, 4) 
+    paginator = Paginator(posts, 4)
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
-    popular_posts = Post.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')[:5]
- 
+    popular_posts = Post.objects.annotate(num_likes=Count('likes')).order_by
+    ('-num_likes')[:5]
 
     context = {
         'posts': posts,
         'categories': categories,
-        'popular_posts' : popular_posts,
-           
+        'popular_posts': popular_posts,
     }
     return render(request, 'index.html', context)
 
@@ -77,7 +75,7 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-            
+
         context = {
                 'post': post,
                 'comments': comments,
@@ -90,7 +88,6 @@ class PostDetail(View):
             }
 
         return render(request, 'post_detail.html', context)
-        
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -102,7 +99,6 @@ class PostDetail(View):
             liked = True
 
         comment_form = CommentForm(data=request.POST)
-        
 
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
@@ -123,7 +119,7 @@ class PostDetail(View):
             }
 
         return render(request, 'post_detail.html', context)
-    
+
 
 class PostLike(View):
     """
@@ -145,7 +141,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
     Logged in user can create a post
     """
     model = Post
-    form_class= PostForm
+    form_class = PostForm
     template_name = 'post_create.html'
     success_url = reverse_lazy('home')
 
@@ -154,14 +150,14 @@ class PostCreate(LoginRequiredMixin, CreateView):
         success_message = "Your post is awaiting approval."
         messages.add_message(self.request, messages.SUCCESS, success_message)
         return super().form_valid(form)
-        
+
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     """
     Logged in user can update their own post
     """
     model = Post
-    form_class= PostForm
+    form_class = PostForm
     template_name = 'post_update.html'
     success_url = reverse_lazy('home')
 
@@ -172,7 +168,8 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-# Source https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview
+# Source
+# https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     """
@@ -187,8 +184,3 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message, 'danger')
         return super(PostDelete, self).delete(request, *args, **kwargs)
-
-
-
-
-
