@@ -6,12 +6,10 @@
 body, .card-account{
     background-color: rgba(240, 238, 238);
     font-family: karla, sans-serif;
-    font-weight: 300;
 }
 
 
 .post-text {
-
     background-color: white;
 }
 
@@ -41,16 +39,19 @@ a:link {
 
 
 a:hover {
-
     text-decoration: none;
-    font-weight: none;
-}
 
+}
 
 a {
     color: black;
   
+} 
+
+#about-link {
+    font-weight: 600;
 }
+
 
 .btn-like {
     color:red;
@@ -140,6 +141,6 @@ ul {
 
 @media screen and (min-width:1750px) {
     .btn-group-vertical {
-        max-width: 50%;
-        
+        max-width: 50%;   
     }
+}

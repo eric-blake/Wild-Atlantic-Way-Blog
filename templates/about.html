@@ -8,19 +8,25 @@
 
             <hr>
 
-            <p> Wild Atlantic Way travel blog was launched in 2023</p>
+            <p> Wild Atlantic Way travel blog was launched in 2023.</p>
 
-            <p>What can you expect to find here? Articles about tourist locations along Irelands west coast</p>
-            <!-- <p>The site admininstator has the right to remove content that is not in keeping with the sites ethos!</p>
-            -->
+            <p> What can you expect to find here? Articles about tourist locations and places to visit along Irelands west coast.
+            You can read the detailed posts. Logged in users can leave comments and like other users posts. Logged in users can also
+            create, edit and delete their own posts.
+            </p>
 
+            <p>Comments and posts must be approved by the site administrator before they are posted live to the site. The site
+            administrator has the right to remove posts and comments that are not in keeping with the sites rules!</p>
+            
+       
+         
 
             {% if user.is_authenticated %}
             {% else %}
-            <p>if you would like to see more then <strong><a href="{% url 'account_signup' %}">Register</a></strong>
-                here.
+            <p id="about-link">If you like what you see then <a href="{% url 'account_signup' %}">Register</a>
+                here.</p>
 
-            <p>Already have an account, them <strong><a href="{% url 'account_login' %}">Login</a></strong> here</p>
+            <p>Already have an account, then <strong><a href="{% url 'account_login' %}">Login</a></strong> here</p>
 
             {% endif %}
 
