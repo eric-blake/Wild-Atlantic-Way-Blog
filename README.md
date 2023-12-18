@@ -10,7 +10,73 @@ Registered users can create, update and delete their own post. They can also lea
 
 # [Live site](https://wild-atlantic-way-c6d960b228a8.herokuapp.com/ "Live site")
 
-## Table of Contents
+## Table of contents
+
+- [Live site](#live-site)
+  - [Table of contents](#table-of-contents)
+  - [UX](#ux)
+    - [Strategy](#strategy)
+    - [Target Audience](#target-audience)
+    - [User Goals](#user-goals)
+      - [First Time User would like to](#first-time-user-would-like-to)
+      - [Registered User would like to](#registered-user-would-like-to)
+      - [Site Owner would like to](#site-owner-would-like-to)
+    - [Agile Development Tool](#agile-development-tool)
+    - [User Stories](#user-stories)
+      - [Must-Have](#must-have)
+      - [Should-Have](#should-have)
+      - [Could-Have](#could-have)
+      - [Wont-Have](#wont-have)
+  - [UX design](#ux-design)
+    - [Wireframe](#wireframe)
+    - [Structure \& Logical Flow](#structure--logical-flow)
+      - [Post Model](#post-model)
+      - [Comment Model](#comment-model)
+      - [Category Model](#category-model)
+    - [Colour Scheme](#colour-scheme)
+    - [Fonts](#fonts)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+      - [Admin Page](#admin-page)
+      - [Navbar](#navbar)
+      - [Footer](#footer)
+      - [Sidebar](#sidebar)
+      - [About](#about)
+      - [Register](#register)
+      - [Sign-in](#sign-in)
+      - [Sign-out](#sign-out)
+      - [Create Post](#create-post)
+      - [Update and Delele post](#update-and-delele-post)
+      - [Update Post](#update-post)
+      - [Confirm Delete Post](#confirm-delete-post)
+      - [Comment form](#comment-form)
+      - [Like post](#like-post)
+    - [Future Features](#future-features)
+  - [Technologies Used](#technologies-used)
+    - [Coding languages used](#coding-languages-used)
+    - [Frameworks and Libraries used](#frameworks-and-libraries-used)
+      - [Django](#django)
+      - [Django-Allauth](#django-allauth)
+      - [Django Crispy Forms](#django-crispy-forms)
+      - [ElepantSQL](#elepantsql)
+      - [psycopg2](#psycopg2)
+      - [Gunicorn](#gunicorn)
+      - [Summernote](#summernote)
+      - [Cloudinary](#cloudinary)
+      - [Mockflow](#mockflow)
+      - [Git](#git)
+      - [CodeAnywhere](#codeanywhere)
+      - [Heroku](#heroku)
+      - [Bootstrap](#bootstrap)
+      - [Microsoft Visio](#microsoft-visio)
+  - [Testing](#testing)
+  - [Deployment and local development](#deployment-and-local-development)
+    - [Deployment](#deployment)
+      - [This project was deployed using Code Institutes mock Terminal for Heroku](#this-project-was-deployed-using-code-institutes-mock-terminal-for-heroku)
+    - [Cloning the repository](#cloning-the-repository)
+    - [Forking the repository](#forking-the-repository)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
 ## UX
 
@@ -332,7 +398,7 @@ The database model diagram was designed using Microsoft Visio
 
 ## Testing
 
-Detailed testing of the site can be found at [TESTING.md](TES).
+Detailed testing of the site can be found at [TESTING.md](TESTING.md)
 
 Testing includes following:
 
@@ -343,17 +409,6 @@ Testing includes following:
 * Testing of User Stories
 * Lighthouse
 
-## Bugs
-
-* ### Fixed bugs
-
-| Test | Result |
-| ------------- | ------------- |
-| Issue ...  | Updated g...... |
-
-* ### Unfixed Bugs
-
-No unfixed bugs
 
 ## Deployment and local development
 
