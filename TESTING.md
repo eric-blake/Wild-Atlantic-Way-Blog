@@ -253,14 +253,14 @@ Only files with custom-written Python code have been verified with the CI python
 | Post details visible         | View post details     |All details visible - title, date, author, image, content, nummber of likes, number of comments, additional information, posted comments                                              | Pass      |   
 |   Like post   |     Click on heart icon     |         Heard icon is not clickable, like count does not increment              | Pass      |   
 |     Post comment |      Type comment in comment form    |      Unable to type in comment form                 | Pass      |   
-|      |          |                       |      |   
+|   All posts   |     Click     |  Redirect to home page                     | Pass      |   
 
 
 #### Register Page
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
 |   Submit signup form   |   Click sign up button and fill in fields     |     The user is redirected to the home page                  | Pass      |  
-|   Submit without filling in the mandadory fields   |    Click on the "Sign In" link in the navigation bar and then click the "Sign Up" button without filling in username, password or password(again) fields      |      The user should get an error message: "Please fill out this field"                 |      |   
+|   Submit without filling in the mandadory fields   |    Click on the "Sign In" link in the navigation bar and then click the "Sign Up" button without filling in username, password or password(again) fields      |      The user should get an error message: "Please fill out this field"                 |   Pass   |   
 
 #### Login Page
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
