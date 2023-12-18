@@ -51,9 +51,8 @@ def blog(request):
     paginator = Paginator(posts, 4)
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
-    popular_posts = Post.objects.annotate(num_likes=Count('likes')).order_by
-    ('-num_likes')[:5]
-
+    popular_posts = Post.objects.annotate(num_likes=Count('likes')
+                                          ).order_by('-num_likes')[:5]
     context = {
         'posts': posts,
         'categories': categories,

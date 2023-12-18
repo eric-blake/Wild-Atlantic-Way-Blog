@@ -48,13 +48,19 @@ Registered users can create, update and delete their own post. They can also lea
 
 ### Agile Development Tool
 
-I utilized a GitHub project and a [Kanban board].  As I start working on each issue I move it to the 'In progress' column.  When the coding for each issue has been completed, the issue is then moved to the 'done' column.
+I utilized a GitHub project and a Kanban board.  As I start working on each issue I move it to the 'In progress' column.  When the coding for each issue has been completed, the issue is then moved to the 'done' column.
 
 ### User Stories
 
+I used Github Issues to record the following user stories:
+
+All User Stories include:
+* Acceptance Criteria
+* Tasks
+* Labels (MoSCoW Priotarization)
+
 #### Must-Have
 
-I used Github Issues to record the following user stories:
 * [USER STORY: Account Registration](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/2)
 * [USER STORY: Manage posts](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/3)
 * [USER STORY: Open post](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/4)
@@ -76,6 +82,8 @@ I used Github Issues to record the following user stories:
 * [USER STORY: View number of comments](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/13)
 
 #### Could-Have
+
+* N/A
 
 #### Wont-Have
 
@@ -108,12 +116,12 @@ The database model diagram was designed using Microsoft Visio
 #### Comment Model
 
 * Enable logged in users to add comments to different posts.
-* Is based on the "I think therefore I blog" walkthrough project.
+* This model is based on the "I think therefore I blog" walkthrough project.
 
 #### Category Model
 
 * This is a custom model that enable users to see a list of categories.
-* Users can filter popsts by category
+* Users can filter posts by category.
 
 ### Colour Scheme
 
@@ -128,8 +136,12 @@ The database model diagram was designed using Microsoft Visio
 
 ### Existing Features
 
-
 #### Admin Page
+* An admin area only allowing access to the site admin/superuser.
+* The admin page is only accessible by typing "admin" in the url <https://wild-atlantic-way-c6d960b228a8.herokuapp.com/admin/>.
+* User name and password must be entered to access the admin page.
+* The administrator must approve all posts and comments before they are live on the site. 
+* the administartor can update/delete posts and commments.
 ![Admin page](/static/images/admin-page.PNG)  
 
 
@@ -215,12 +227,10 @@ The database model diagram was designed using Microsoft Visio
 #### Update Post
 
 * When a user clicks on edit on the post list page they wull be redirected to the post form. The form will display the post details and the user can update details as required. 
-
+* After making the required updates, the user will need to click on the update button to make the changes pernament.
+* 
 ![Update post](/static/images/update-post.PNG)
 
-* After making the required updates, the user will need to click on the update button to make the changes pernament.
-
-![Update button](/static/images/update-button.PNG)
 
 #### Confirm Delete Post
 
@@ -239,13 +249,10 @@ The database model diagram was designed using Microsoft Visio
 
 ![Comment approval](/static/images/comment-waiting.PNG)
 
-* All users can see a list of previously approved comments
+* All users can see a list of previously approved comments.
+* All users can see the comment count for each post.
   
-![Comment list](/static/images/comment-list.PNG)
-
-* All users can see the comment count for each post
- 
-![Comment count](/static/images/comment-count.PNG)
+![Comment list](/static/images/comments.PNG)
 
 
 #### Like post

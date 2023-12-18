@@ -242,7 +242,7 @@ Only files with custom-written Python code have been verified with the CI python
 | Feature               | Action     | Expected Result                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
 | Posts per page        | Count      | Maximum of 4 posts per page                                        | Pass      |   
-| Next button           | Click      | Redirect to previous page                                          | Pass      |       
+| Next button           | Click      | Redirect to next page                                              | Pass      |       
 | Previous button       | Click      | Redirect to previous page                                          | Pass      |       
 
 
