@@ -12,9 +12,9 @@
             <p>{{post.created_on|date}} | Author: {{post.author}}</p>
             <div class="col-m-6 mb-4">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg" width="100%">
+                <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg" width="100%" alt="blog post image">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%" alt="blog post image">
                 {% endif %}
             </div>
             <p class="card-text">
@@ -26,10 +26,9 @@
 
 <hr>
 
-
 <div class="container">
     <div class="row">
-        <!-- Likes -->
+        <!-- Post Likes -->
         <div class="col-3">
             {% if user.is_authenticated %}
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -60,9 +59,7 @@
         <div class="col-3">
             
         </div>
-
-
-        
+   
     </div>
 </div>
 
@@ -122,11 +119,6 @@
 
     <div class="container mt-4">
         <div class="row">
-            <!-- <div class="col-1">
-                <img class="d-flex align-self-start mr-3 avatar-image"
-                    src="https://res.cloudinary.com/do3uuaxth/image/upload/v1700776742/avatar_jmj8xj.png"
-                    alt="avatar image">
-            </div> -->
             <div class="col">
                 <h5 class="mt-0">{{comment.name}}</h5>
                 <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h5>
@@ -137,11 +129,6 @@
 
     {% endfor %}
 
-
-
 </div>
-
-
-
 
 {% endblock content %}
