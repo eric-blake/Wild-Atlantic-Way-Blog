@@ -6,59 +6,22 @@
   - [Table of contents](#table-of-contents)
   - [Validator Testing](#validator-testing)
     - [HTML](#html)
-      - [Home Page](#home-page)
-      - [Base Page](#base-page)
-      - [About Page](#about-page)
-      - [Categories Page](#categories-page)
-      - [Posts Page](#posts-page)
-      - [Sidebar Page](#sidebar-page)
-      - [Pagination Page](#pagination-page)
-      - [Register Page](#register-page)
-      - [Login Page](#login-page)
-      - [Logout Page](#logout-page)
-      - [Create Post Page](#create-post-page)
-      - [Update Post Page](#update-post-page)
-      - [Delete Post Page](#delete-post-page)
     - [CSS](#css)
-    - [CSS](#css-1)
     - [JavaScript](#javascript)
     - [Python](#python)
-      - [admin.py](#adminpy)
-      - [models.py](#modelspy)
-      - [forms.py](#formspy)
-      - [views.py](#viewspy)
-      - [waw\_blogg/urls.py](#waw_bloggurlspy)
-      - [wildatlanticway/urls.py](#wildatlanticwayurlspy)
-      - [settings.py](#settingspy)
     - [Lighthouse](#lighthouse)
-      - [Base Page](#base-page-1)
-      - [Home Page](#home-page-1)
-      - [About Page](#about-page-1)
-      - [Categories Page](#categories-page-1)
-      - [Posts Page](#posts-page-1)
-      - [Post detail Page](#post-detail-page)
-      - [Header Page](#header-page)
-      - [Footer Page](#footer-page)
-      - [Sidebar Page](#sidebar-page-1)
-      - [Pagination Page](#pagination-page-1)
-      - [Create Post Page](#create-post-page-1)
-      - [Update Post Page](#update-post-page-1)
-      - [Delete Post Page](#delete-post-page-1)
-      - [Register Page](#register-page-1)
-      - [Login Page](#login-page-1)
-      - [Logout Page](#logout-page-1)
   - [Manual Testing](#manual-testing)
     - [Base Page /  Header Page /  Footer Page / About page](#base-page---header-page---footer-page--about-page)
       - [Home Page / Sidebar Page / Categories Page](#home-page--sidebar-page--categories-page)
-      - [Pagination Page](#pagination-page-2)
+      - [Pagination Page](#pagination-page)
       - [Post Detail Page (User logged out)](#post-detail-page-user-logged-out)
-      - [Register Page](#register-page-2)
-      - [Login Page](#login-page-2)
+      - [Register Page](#register-page)
+      - [Login Page](#login-page)
       - [Post Detail Page (User Logged in)](#post-detail-page-user-logged-in)
-      - [Create Post Page](#create-post-page-2)
-      - [Update Post Page](#update-post-page-2)
-      - [Delete post Page](#delete-post-page-2)
-      - [Logout Page](#logout-page-2)
+      - [Create Post Page](#create-post-page)
+      - [Update Post Page](#update-post-page)
+      - [Delete post Page](#delete-post-page)
+      - [Logout Page](#logout-page)
       - [Page](#page)
   - [Browser Testing](#browser-testing)
   - [Device Testing](#device-testing)
@@ -69,57 +32,50 @@
 ### HTML
 
 Validator: [W3C Validator](https://validator.w3.org/)
-    
-#### Home Page
+**Home Page**
 - ![Home page image](/static/images/testing/)
 
-#### Base Page
+**Base Page**
 - ![Home page image](/static/images/testing/)
 
-#### About Page
+**About Page**
 - ![About page image](/static/images/testing/)
-
-#### Categories Page
+- 
+**Categories Page**
 - ![Categories page image](/static/images/testing/)
 
-#### Posts Page
+**Posts Page**
 - ![Posts page image](/static/images/testing/)
 
-#### Sidebar Page
+**Sidebar Page**
 - ![Sidebar page image](/static/images/testing/)
 
-#### Pagination Page
+**Pagination Page**
 - ![Pagination page image](/static/images/testing/)
 
-#### Register Page
+**Register Page**
 - ![Register page image](/static/images/testing/)
 
-#### Login Page
+**Login Page**
 - ![login page image](/static/images/testing/)
 
-#### Logout Page
+**Logout Page**
 - ![Logout page image](/static/images/testing/)
 
-#### Create Post Page
+**Create Post Page**
 - ![Create post page image](/static/images/testing/)
 
-#### Update Post Page
+**Update Post Page**
 - ![Update post page image](/static/images/testing/)
-
-#### Delete Post Page
+- 
+**Delete Post Page**
 - ![Delete post page image](/static/images/testing/)
 
 
 ### CSS
 
 Validator: [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator)
-
-
-
-### CSS
-
-Validator: [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator).
-  
+ 
 - ![CSS validator image](/static/images/testing/)
 
 ### JavaScript
@@ -138,80 +94,78 @@ Only files with custom-written Python code have been verified with the CI python
 
 - ![JSHint validator](/static/images/testing/)
 
-#### admin.py
+**admin.py**
 - No errors found
 
-#### models.py
+**models.py**
 - No errors found
 
-#### forms.py
+**forms.py**
 - No errors found
   
-#### views.py
+**views.py**
 - No errors found
 
-#### waw_blogg/urls.py
+**waw_blog/urls.py**
 - All clear, no errors found.
 
-#### wildatlanticway/urls.py
+**wildatlanticway/urls.py**
 - No errors found.
 
-#### settings.py
+**settings.py**
 - No errors found
 
 
 
 ### Lighthouse
 
-#### Base Page
+**Base Page**
 - ![Home page image](/static/images/testing/)
 
-#### Home Page
+**Home Page**
 - ![Home page image](/static/images/testing/)
 
-#### About Page
+**About Page**
 - ![About page image](/static/images/testing/)
 
-#### Categories Page
+**Categories Page**
 - ![Categories page image](/static/images/testing/)
 
-#### Posts Page
+**Posts Page**
 - ![Posts page image](/static/images/testing/)
 
-#### Post detail Page
+**Post detail Page**
 - ![Post detail page image](/static/images/testing/)
 
-#### Header Page
+**Header Page**
 - ![Header page image](/static/images/testing/)
 
-#### Footer Page
+**Footer Page**
 - ![Footer page image](/static/images/testing/)
 
-#### Sidebar Page
+**Sidebar Page**
 - ![Sidebar page image](/static/images/testing/)
-
-#### Pagination Page
+- 
+**Pagination Page**
 - ![Pagination page image](/static/images/testing/)
 
-#### Create Post Page
+**Create Post Page**
 - ![Create post page image](/static/images/testing/)
 
-#### Update Post Page
+**Update Post Page**
 - ![Update post page image](/static/images/testing/)
-
-#### Delete Post Page
+- 
+**Delete Post Page**
 - ![Delete post page image](/static/images/testing/)
 
-#### Register Page
+**Register Page**
 - ![Register page image](/static/images/testing/)
 
-#### Login Page
+**Login Page**
 - ![login page image](/static/images/testing/)
-
-#### Logout Page
+  
+**Logout Page**
 - ![Logout page image](/static/images/testing/)
-
-
 
 
 ## Manual Testing
