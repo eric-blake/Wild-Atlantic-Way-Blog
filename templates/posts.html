@@ -6,9 +6,9 @@
 
         {% if "placeholder" in post.featured_image.url %}
         <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg"
-            class="col-lg-6 card-img-end img-fluid p-0" width="100%" alt="blog post image">
+            class="col-lg-6 card-img-end img-fluid p-0" alt="blog post image">
         {% else %}
-        <img class="col-xl-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" alt="blog post image"/>
+        <img class="col-xl-6 card-img-end img-fluid p-0" src="{{ post.featured_image.url}}" alt="blog post image">
         {% endif %}
 
 

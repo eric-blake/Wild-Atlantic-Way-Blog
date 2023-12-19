@@ -8,23 +8,21 @@
 
             <div class="card" style="max-width: 40rem;">
                 <div class="card-header">
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
 
-                <h2>Are you sure you want to delete the post <span>"{{ post.title }}"</span>?</h2>  
+                        <h3>Are you sure you want to delete the post <span>"{{ post.title }}"</span>?</h3>
 
-                <input type="submit" value="Delete" class="btn btn-lg btn-danger my-3">
-                
-                <span><a class="btn btn-lg btn-secondary" href="{% url 'home' %}">Go Back</a>
-                <form method="POST"></span>
+                        <input type="submit" value="Delete" class="btn btn-lg btn-danger my-3">
+
+                        <span><a class="btn btn-lg btn-secondary" href="{% url 'home' %}">Go Back</a></span>
+
+                    </form>
                 </div>
-            </form>
-
             </div>
         </div>
     </div>
 </div>
-
 {%endblock%}
 
 

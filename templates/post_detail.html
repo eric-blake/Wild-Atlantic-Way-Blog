@@ -12,9 +12,9 @@
             <p>{{post.created_on|date}} | Author: {{post.author}}</p>
             <div class="col-m-6 mb-4">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg" width="100%" alt="blog post image">
+                <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg" alt="blog post image">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%" alt="blog post image">
+                <img src="{{ post.featured_image.url }}" alt="blog post image">
                 {% endif %}
             </div>
             <p class="card-text">
@@ -121,8 +121,8 @@
         <div class="row">
             <div class="col">
                 <h5 class="mt-0">{{comment.name}}</h5>
-                <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h5>
-                    <p> {{ comment.body | linebreaks}}</p>
+                <h6 class="mt-0 text-muted">{{comment.created_on |date}}</h6>
+                     {{ comment.body | linebreaks }} 
             </div>
         </div>
     </div>

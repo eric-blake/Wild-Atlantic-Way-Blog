@@ -38,10 +38,10 @@
         <div class="pop-left">
             {% if "placeholder" in popular.featured_image.url %}
             <img src="https://res.cloudinary.com/do3uuaxth/image/upload/v1702150987/placeholder_yec4dm.jpg"
-                class="card-img-end img-fluid p-0 m-1 rounded" width="100%" alt="blog post image">
+                class="card-img-end img-fluid p-0 m-1 rounded" alt="blog post image">
             {% else %}
-            <img class="card-img-end img-fluid p-0 m-1 rounded" width="100%" src="{{ popular.featured_image.url}}"
-                alt="blog post image" />
+            <img class="card-img-end img-fluid p-0 m-1 rounded" src="{{ popular.featured_image.url}}"
+                alt="blog post image">
             {% endif %}
         </div>
 
@@ -52,5 +52,5 @@
         </div>
 
     </div>
+    </a>
     {% endfor %}
-</a>
