@@ -23,6 +23,7 @@ Registered users can create, update and delete their own post. They can also lea
   - [UX design](#ux-design)
     - [Wireframe](#wireframe)
     - [Structure \& Logical Flow](#structure--logical-flow)
+    - [Colour Scheme](#colour-scheme)
     - [Fonts](#fonts)
   - [Features](#features)
     - [Existing Features](#existing-features)
@@ -34,7 +35,9 @@ Registered users can create, update and delete their own post. They can also lea
   - [Deployment and local development](#deployment-and-local-development)
     - [Deployment](#deployment)
     - [Cloning the repository](#cloning-the-repository)
-    - [Forking the repository](#forking-the-repository)
+    - [Forking the Repository](#forking-the-repository)
+    - [Cloning the repository](#cloning-the-repository-1)
+    - [Forking the repository](#forking-the-repository-1)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -74,7 +77,7 @@ Registered users can create, update and delete their own post. They can also lea
 
 ### Agile Development Tool
 
-I utilized a GitHub project and a Kanban board. ![Kanban board](/static...)
+I utilized a GitHub project and a Kanban board. ![Kanban board](https://github.com/users/eric-blake/projects/13)
 As I start working on each issue I move it to the 'In progress' column.  When the coding for each issue has been completed, the issue is then moved to the 'done' column.
 
 ### User Stories
@@ -102,6 +105,8 @@ All User Stories include:
 * [USER STORY: Update post](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/16)
 * [USER STORY: Delete post](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/17)
 * [USER STORY: Post category](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/18)
+* [USER STORY: About page](https://github.com/eric-blake/Wild-Atlantic-Way-Blog/issues/19)
+  
 
 **Should-Have**
 
@@ -151,7 +156,7 @@ The database model diagram was designed using Microsoft Visio
 * This is a custom model that enable users to see a list of categories.
 * Users can filter posts by category.
 
-**Colour Scheme**
+### Colour Scheme
 
 * The background colours is form of grey - rgba(240, 238, 238).
 * The buttons use the standard bootstrap secondary button color.
@@ -170,6 +175,7 @@ The database model diagram was designed using Microsoft Visio
 * User name and password must be entered to access the admin page.
 * The administrator must approve all posts and comments before they are live on the site. 
 * The administartor can update/delete posts and commments.
+  
 ![Admin page](/static/images/admin-page.PNG)  
 
 
@@ -192,11 +198,13 @@ The database model diagram was designed using Microsoft Visio
 
 ![Mobile Navbar for signed in user](/static/images/nav-5.PNG)
 
+
 **Footer**
 
 * The footer is simple layout with displaying social media options.  When an icon is clicked, it opens in a new tab so that the user still has the main site open.
 
 ![Footer](/static/images/footer.PNG)
+
 
 **Sidebar**
 
@@ -208,14 +216,16 @@ The database model diagram was designed using Microsoft Visio
 
 * Clicking on a post in the popular post list will open the post detail page.
   
-![Popular posts](/static/images/footer.PNG)
+![Popular posts](/static/images/popular-posts.PNG)
 
 
 **About**
 
 * The about page is a simple page with text outlining the purpose of the site and the contact details.
+* There is a link to the register and login pages for users not signed in.
   
-![About](/static/images/popular-posts.PNG)
+![About](/static/images/about.PNG)
+
 
 **Register**
 
@@ -377,17 +387,91 @@ Testing includes the following:
 
 ### Deployment
 
-**This project was deployed using Code Institutes mock Terminal for Heroku**
-* Steps for Deployment
-  * From Heroku Dashboard, select Create new app from the dropdown menu.
-  * Add a unique app name and then choose a region closest to you (EU or USA).
-  * Click on Create App.
-  * Go to support dependencies and select Add Buildpack.
-  * The order of the buildpacks is important. Select Python first, then save changes. Then add Node.js second and save changes. If they are not in this order, you can drag them to rearrange them.
-  * Add config VAR - key is PORT and the value is 8000.
-  * Go to Deploy tab and select deployment method - Github, then click connect.
-  * Enable automatic deploy so Heroku updates app each time changes are pushed to Github.
-  * Click on View button to take you to your deployed link.
+The following steps were taken to deploy this website to Heroku 
+
+1. Elephant SQL database:
+    - Open [ElephantSQL](https://www.elephantsql.com/) and sign-up for a free account
+    - Click on 'Create New Instance'
+    - Enter a database name for the project and select Tiny Turtle (Free plan), click on continue
+    - Select your region, click on 'Review' and 'Create instance'
+    - Click on your instance in the list to open it
+    - Copy database URL in the URL field
+  
+2. Heroku App:
+    - Select 'Create new app' in Heroku
+    - Enter an App name and select the location
+    - Select 'Settings' in the menubar. Click 'Reveal Config Vars' and add the following:
+      - DATABASE_URL: the DATABASE_URL copied from ElephantSQL
+      - SECRET_KEY: The SECRET_KEY string you created
+      - PORT: 8000
+    - Click 'Deploy' and then 'GitHub' under 'Deployment method'
+    - Select the repository you want to deploy and click 'Connect'
+    - Scroll down and click 'Deploy Branch' to complete the process
+
+3. Prepare the environment and settings.py file:
+   - In the settings.py file within the django app, import Path from pathlib, import os and import dj_database_url
+   - Insert the line if os.path.isfile("env.py"): import env
+   - Remove the insecure secret key that django has in the settings file by default and replace it with SECRET_KEY = os.environ.get('SECRET_KEY')
+   - Replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))} ensure the correct indentation for python is used.
+   - Save all files and make migrations - python3 manage.py migrate
+
+4. Cloudinary:
+   - Create a Cloudinary account
+   - Add Cloudinary URL to env.py  
+   - Add DISABLE_COLLECTSTATIC to Heroku Config Vars
+   - Add Cloudinary Libraries to installed apps
+   - Tell Django to use Cloudinary to store media and static files
+   - Link file to the templates directory in Heroku. Place under the BASE_DIR line
+   - Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array
+   - Add Heroku Hostname to ALLOWED_HOSTS
+   - Create 3 new folders on top level directory - media, static, templates
+   - Create a Procfile on the top level directory, add code 'web: gunicorn PROJ_NAME.wsgi'
+   - Save all files and add, commit and push changes to Github.
+
+5. Deploy 
+   - In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
+   - Heroku will now build the app.  Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
+
+
+### Cloning the repository
+
+The repository was cloned to my local PC. The steps to clone are as follows.
+
+* In the Github repository, navigate to the main page of the repository.
+* Click on the green Code button and copy the URL.
+* Select Clone by HTTPS option.
+* Open the code editor and within the terminal change the directory to the location you want to clone the repository to.
+* Type git clone and paste the URL copied earlier.
+* Press enter to create the local clone.
+
+
+### Forking the Repository
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
+2. Locate the [GitHub Repository](https://github.com/eric-blake/Wild-Atlantic-Way-Blog).
+3. At the top of the repository, on the right side of the page, select "Fork"
+4. You should now have a copy of the original repository in your GitHub account.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Cloning the repository
 
