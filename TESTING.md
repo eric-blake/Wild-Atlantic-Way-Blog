@@ -24,6 +24,7 @@
       - [Delete post Page](#delete-post-page)
     - [About page (User signed out)](#about-page-user-signed-out)
     - [About page (User signed in)](#about-page-user-signed-in)
+    - [Admin panel](#admin-panel)
   - [Browser Testing](#browser-testing)
   - [Device Testing](#device-testing)
   - [Bugs](#bugs)
@@ -257,7 +258,7 @@ Only files with custom-written Python code have been verified with the CI python
 #### Login Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|      Sign in    |  The user is signed in and redirected to the home page. A message indicating success should appear and disappear automatically after 3 seconds  |  Enter username and password      |   User is signed in and the following message appeared [Login](/static/images/success-messages/success-login.PNG)      |      Pass     |
+|      Sign in    |  The user is signed in and redirected to the home page. A message indicating success should appear and disappear automatically after 3 seconds  |  Enter username and password      |   User is signed in and the following message appeared ![Login](/static/images/success-messages/success-login.PNG)      |      Pass     |
 |    Sign In without filling in the mandadory fields      |   The user should get an error message: "Please fill out this field"       |  Click "Sign in" without filling in the mandatory fields       |   The user gets an error message: "Please fill out this field" |       Pass    |
 </details>
 
@@ -267,7 +268,7 @@ Only files with custom-written Python code have been verified with the CI python
 #### Logout Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|      Logout   |   The user is signed out and redirected to the home page. A message indicating success should appear and disappear automatically after 3 seconds      |  Click "Sign out"      |  The user is signed out and redirected to the home page. The following message appears [Logout](/static/images/success-messages/success-logout.PNG)       |      Pass     |
+|      Logout   |   The user is signed out and redirected to the home page. A message indicating success should appear and disappear automatically after 3 seconds      |  Click "Sign out"      |  The user is signed out and redirected to the home page. The following message appears ![Logout](/static/images/success-messages/success-logout.PNG)       |      Pass     |
 </details>  
 
 <details>
@@ -276,9 +277,9 @@ Only files with custom-written Python code have been verified with the CI python
 #### Create Post Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|    Create post       |    Signed in user can create post. When user fills in fields and clicks "Create", a message appears "Your post is awaiting approval"    |  Fill in all fields and click "Create"      |   Message appears "Your post is awaiting approval" [Post awaiting approval](/static/images/success-messages/success-post-awaiting.PNG)       |     Pass       |
+|    Create post       |    Signed in user can create post. When user fills in fields and clicks "Create", a message appears "Your post is awaiting approval"    |  Fill in all fields and click "Create"      |   Message appears "Your post is awaiting approval" ![Post awaiting approval](/static/images/success-messages/success-post-awaiting.PNG)       |     Pass       |
 |    Incomplete form      |    The user should get an error message: "Please fill out this field"       |     Leave one field blank and click "Create"    |   The user gets an error message: "Please fill out this field"        |       Pass    |
-|  Unique post title         |   The user should get an error message: "Post with this Title already exists"     |     Copy post title from post list page, fill out remaining fields and click "Create"   |   The following message appears [Post title](/static/images/success-messages/post-title.PNG)    |      Pass      |
+|  Unique post title         |   The user should get an error message: "Post with this Title already exists"     |     Copy post title from post list page, fill out remaining fields and click "Create"   |   The following message appears ![Post title](/static/images/success-messages/post-title.PNG)    |      Pass      |
 </details>
 
 <details>
@@ -287,7 +288,7 @@ Only files with custom-written Python code have been verified with the CI python
 ####  Update Post Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|    Update own post     |  |  Click edit and update fields. Click "Update"       |    The success message appears [Update post](/static/images/success-messages/success-post-updated.PNG)    | Pass
+|    Update own post     |  |  Click edit and update fields. Click "Update"       |    The success message appears ![Update post](/static/images/success-messages/success-post-updated.PNG)    | Pass
 </details>
 
 <details>
@@ -296,7 +297,7 @@ Only files with custom-written Python code have been verified with the CI python
 ####  Delete post Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|     Delete own post   |    A signed in user can delete their own posts.     |   Click "Delete" on the home page, Post delete confirmation page opens, click "Delete"     |   Message appears "Your post was successfully deleted". [Delete post](/static/images/success-messages/success-delete-post.PNG)       |   Pass        |
+|     Delete own post   |    A signed in user can delete their own posts.     |   Click "Delete" on the home page, Post delete confirmation page opens, click "Delete"     |   Message appears "Your post was successfully deleted". ![Delete post](/static/images/success-messages/success-delete-post.PNG)       |   Pass        |
 |     Go back     |   In the delete confirmation page, the user has the option to click on "Go back" to return to the home page, and not delete the post    |  Click "Delete" on the home page, Post delete confirmation page opens, click "Go back"      |    The user is returned to the home page and the post is not deleted    |    Pass       |
 </details>
 
@@ -319,11 +320,25 @@ Only files with custom-written Python code have been verified with the CI python
 |    Sign-in/Register links       |   Sign-in/Register links not available     |  Open about page and verify Sign-in/Register links not available     |   Sign-in/Register links not available     |   Pass        |
 </details>
 
-
-
+<details>
+  <summary>Click me</summary>
+  
+### Admin panel
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|         |        |        |        |           |
+|    Approve posts     |   Admin can approve posts     |   Login to admin and  approve post     | Post approved       |    Pass       |
+|    Update posts     |  Admin can update posts      |    Login to admin and update post    |  Post updated      |      Pass     |
+|    Delete posts     |    Admin can delete posts    |   Login to admin and delete post    |   Post deleted     |     Pass      |
+|    Approve comments     |   Admin can approve comments      |   Login to admin and  approve comment        |  Comment approved      |    Pass       |
+|    Update coments     |    Admin can update comments    |    Login to admin and update comment      | Comment updated       |   Pass        |
+|    Delete comments     |   Admin can delete comments    |  Login to admin and delete comment       |   Comment deleted     |     Pass      |
+|    Add categories  |  Admin can add categories      |   Login to admin and add category      |     Category added      | Pass|
+|    Update categories     |   Admin can update categories     | Login to admin and update category        |  Category updated      |    Pass       |
+|    Delete categoories     |  Admin can delete category     |  Login to admin and delete category       | Category deleted       |   Pass        |
+|    Add user     |    Admin can add users     |  Login to admin and add user        |  User added      |   Pass        |
+|    Delete user     |   Admin can delete user     |   Login to admin and delete user     |  User deleted      |   Pass        |
+</details>
+
 
 
 ## Browser Testing
