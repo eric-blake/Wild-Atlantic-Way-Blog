@@ -453,26 +453,6 @@ By forking the GitHub Repository, we make a copy of the original repository on o
 3. At the top of the repository, on the right side of the page, select "Fork"
 4. You should now have a copy of the original repository in your GitHub account.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Cloning the repository
 
 The repository was cloned to my local PC. The steps to clone are as follows.

@@ -11,18 +11,19 @@
     - [Python](#python)
     - [Lighthouse](#lighthouse)
   - [Manual Testing](#manual-testing)
-    - [Base Page /  Header Page /  Footer Page / About page](#base-page---header-page---footer-page--about-page)
-      - [Home Page / Sidebar Page / Categories Page](#home-page--sidebar-page--categories-page)
-      - [Pagination Page](#pagination-page)
-      - [Post Detail Page (User logged out)](#post-detail-page-user-logged-out)
+    - [Navbar and Footer (base.html)](#navbar-and-footer-basehtml)
+      - [Sidebar](#sidebar)
+      - [Pagination](#pagination)
+      - [Post Detail Page (User signed in)](#post-detail-page-user-signed-in)
+      - [Post Detail Page (User signed out)](#post-detail-page-user-signed-out)
       - [Register Page](#register-page)
       - [Login Page](#login-page)
-      - [Post Detail Page (User Logged in)](#post-detail-page-user-logged-in)
+      - [Logout Page](#logout-page)
       - [Create Post Page](#create-post-page)
       - [Update Post Page](#update-post-page)
       - [Delete post Page](#delete-post-page)
-      - [Logout Page](#logout-page)
-      - [Page](#page)
+    - [About page (User signed out)](#about-page-user-signed-out)
+    - [About page (User signed in)](#about-page-user-signed-in)
   - [Browser Testing](#browser-testing)
   - [Device Testing](#device-testing)
   - [Bugs](#bugs)
@@ -170,110 +171,126 @@ Only files with custom-written Python code have been verified with the CI python
 
 ## Manual Testing
 
-### Base Page /  Header Page /  Footer Page / About page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Logo                  | Click      | Redirect to home                                                   | Pass      |
-| Home                  | Click      | Redirect to home                                                   | Pass      |
-| About                 | Click      | Open About page                                                    | Pass      |
-| Register              | Click      | Open register page                                                 | Pass      |
-| Login                 | Click      | Open Gallery page                                                  | Pass      |
-| Logout                | Click      | Open logout page                                                   | Pass      |
-| Facebook link         | Click      | Open in new page                                                   | Pass      |
-| Instagram link        | Click      | Open in new page                                                   | Pass      |
-| Youtube link          | Click      | Open in new page                                                   | Pass      |
+### Navbar and Footer (base.html)
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+| Logo                  | Logo available to all users, when user clicks on logo they should be redirected to home page  | Click on logo | User is redirected to the home page      |    Pass  |
+| Home                  | Home link available to all users, when user clicks on home they should be redirected to home page | Click on home | User is redirected to the home page      |   Pass   |
+| About                  | About link available to all users, when user clicks on about they should be redirected to about page      | Click on about  | User is redirected to thr about page      |   Pass   |
+| Register                  | Register link available to all signed out users, when user clicks on register they should be redirected to register page      | Click on register  | User is redirected to the register page      |   Pass   |
+| Login                  | Login link available to all signed out users, when user clicks on login they should be redirected to login page      | Click on login  | User is redirected to the login page      |   Pass   |
+| Logout                  | Logout link available to all signed in users, when user clicks on logout they should be redirected to logout page      | Click on logout  | User is redirected to the logout page      |   Pass   |
+| Facebook link (icon)    | Facebook icon available to all users, when user clicks on icon it opens Facebook in a new tab | Click on Facebook icon  | User is redirected to Facebook website on a new tab  |   Pass   |
+| Instagram link (icon)    | Instagram icon available to all users, when user clicks on icon it opens Instagram in a new tab | Click on Instagram icon  | User is redirected to Instagram website on a new tab  |   Pass   |
+| Youtube link (icon)    | Youtube icon available to all users, when user clicks on icon it opens Youtube in a new tab | Click on Youtube icon  | User is redirected to Youtube website on a new tab  |   Pass   |
+| Hamburger menu | Hamburger menu available to users on small screens  | Open site on mobile device  | Hamburger menu is present      |   Pass   |
+| Hamburger menu | Hamburger menu can be toggled to open and closed position  | Toggle hamburger menu to open and closed  | Hamburger menu is responsive      |   Pass   |
 
 
-#### Home Page / Sidebar Page / Categories Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Categories            | Click      | Redirect to page with list of posts for selected category          | Pass      |
-| Clear filters         | Click      | Redirect to home page                                              | Pass      |
-| Popular post          | Click      | Redirect to post detail page for selected post                     | Pass      |
-| Individual post       | Click      | Redirect to post detail page for selected post                     | Pass      |
-
-#### Pagination Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Posts per page        | Count      | Maximum of 4 posts per page                                        | Pass      |   
-| Next button           | Click      | Redirect to next page                                              | Pass      |       
-| Previous button       | Click      | Redirect to previous page                                          | Pass      |       
+#### Sidebar 
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|      Sidebar   |    Sidebar containing categories and popular posts is available to users on screens > 992px   |  Use Chrome developer tools to verify side bar is avaialbe on screens >= 992px and not on screens < 992px        |  side bar is avaialbe on screens >= 992px and not on screens < 992px       |  Pass         |
+| Categories buttons           | When user clicks on a category they should be redirected to page with list of posts for selected category   | Click on category      | User is redirected to page with list of posts for selected category       | Pass|
+| Clear filters         | When user clicks on "Clear Posts" they should be redirected to home page       | Click on "Clear Filter" | User is redirected to home page| Pass      |
+| Popular post          | When user clicks on a post in the "Popular Post" list they should be redirected to the detailed view for the selected post | Click on one of the popular posts |User is redirected to post detail page for selected post | Pass|
 
 
-#### Post Detail Page (User logged out)
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Open post detail |  Logout out and open post | Click anywhere on post opens the post                      | Pass      |   
-| Post details visible         | View post details     |All details visible - title, date, author, image, content, nummber of likes, number of comments, additional information, posted comments                                              | Pass      |   
-|   Like post   |     Click on heart icon     |         Heard icon is not clickable, like count does not increment              | Pass      |   
-|     Post comment |      Type comment in comment form    |      Unable to type in comment form                 | Pass      |   
-|   All posts   |     Click     |  Redirect to home page                     | Pass      |   
+#### Pagination
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|  Posts per page on home page      |  There should be 4 posts per page      |  Open home page and cound posts      |   There is 4 posts per page     |      Pass     |
+| Next button | When user click on next button they are redirected to the next page| Click on "Next" button | User is redirected to the next page      | Pass|     
+| Previous button | When user click on previous button they are redirected to the previous page| Click on "Previous" button | User is redirected to the previous page      | Pass|     
+             
+
+#### Post Detail Page (User signed in)
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+| Post detail page     | When the user clicks on the title of a post they should be redirected to the detailed view for the selected post       |   Click on title of a post     |    User is redirected to the detailed view for the selected post     |  Pass |
+|    Post details     |  All details should be visible to all users - title, date, author, image, content, nummber of likes, number of comments, posted comments, additional information |   Click on a post     |    All details are present - title, date, author, image, content, nummber of likes, number of comments, posted comments, additional information   |     Pass      |
+| Like post | The heart icon should be present and available to click, turns solid red when clicked and likes counter increments by 1      |  Click on heart icon      |    Heart icon goes solid red and likes counter increments by 1   |    Pass       |
+| Un-like post | The heart icon should be solid red and and available to click, turns from solid red to normal icon when clicked and likes counter decrements by 1      |  Click on heart icon      |    Heart icon turns from solid red to normal icon when clicked and likes counter decrements by 1  |    Pass       |
+|     Leave a comment     |   Comment form should be available and accept text, when user clicks "Submit" button the following message appears "Your comment is awaiting approval"     |  Type comment and click "Submit"     |    Comment can be submitted, and the following message appears    |   Pass        |
+|   All-posts button      |   When  user click on "All Posts" it should redirect them to the home page     |  Click on "All Posts"      |   User is redirected to the home page     | Pass           |
+
+
+#### Post Detail Page (User signed out)
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+| Post detail page     | When the user clicks on the title of a post they should be redirected to the detailed view for the selected post       |   Click on title of a post     |    User is redirected to the detailed view for the selected post     |  Pass |
+|    Post details     |  All details should be visible to all users - title, date, author, image, content, nummber of likes, number of comments, posted comments, additional information |   Click on a post     |    All details are present - title, date, author, image, content, nummber of likes, number of comments, posted comments, additional information   |     Pass      |
+| Like post | The heart icon should be present but not available to click   |  Click on heart icon      |    Heart icon does not change and likes counter does not increment   |      Pass     |
+|     Leave a comment     |   Comment form should be present but does not accept text, the "Submit" button shuould not be present     |  Attempt to type in comment form    |    User can not type comment, and "Submit" button is not present |   Pass    |
+|   All-posts button      |   When  user click on "All Posts" it should redirect them to the home page     |  Click on "All Posts"      |   User is redirected to the home page     | Pass           |
 
 
 #### Register Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-|   Submit signup form   |   Click sign up button and fill in fields     |     The user is redirected to the home page                  | Pass      |  
-|   Submit without filling in the mandadory fields   |    Click on the "Sign In" link in the navigation bar and then click the "Sign Up" button without filling in username, password or password(again) fields      |      The user should get an error message: "Please fill out this field"                 |   Pass   |   
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|    Submit signup form     |    Signup form can be submitted, A message indicating success should appear and disappear automatically after 3 seconds    |     Click sign up link in navbar, fill in fields and click "submit"   |  Signup form was submitted and message appears       |     Pass      |
+|     Submit without filling out fields    |    The user should get an error message: "Please fill out this field"    |   Click "Sign-up" without filling in the mandadory fields      |  The following message appears  ![Register](/static/images/success-register.PNG)    |    Pass       |
+|         |        |        |        |           |
+
 
 #### Login Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-|    Sign in  |        Enter username and password and click "Sign in"  |       The user is redirected to the home page                |  Pass    |
-|   Sign In without filling in the mandadory fields   |   Click "sign in" without filling in the mandadory fields        |      The user should get an error message: "Please fill out this field"                    |   Pass   |
-
-
-#### Post Detail Page (User Logged in)
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Leave a comment | Type comment and click "Submit"| Message appears "Your comment is awaiting approval" | Pass ![image]() |   
-| Like post  | Click on heart icon | Heart icon goes solid red and likes counter increments by 1 | Pass |
-| Unlike post| Click on heart icon | Heart icon returns to standard red icon and like counter decrements by 1 |  Pass  |   
-
-
-
-
-#### Create Post Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-| Create post     |    Fill in all fields and click "Create"      |     Message appears "Your post is awaiting approval"                        |   Pass   |   
-| Incomplete form  |       Leave one field blank and click "Create"   |          The user should get an error message: "Please fill out this field"               |   Pass   | 
-| Unique post title     |   Copy post title from post list page       |        The user should get an error message: "Post with this Title already exists"          |  Pass    |   
-
-
-
-####  Update Post Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-|    Update post  | Update fields and click "Update         |      Message appears "Your post has been updated successfully"                      |  Pass    |   
-
-
-####  Delete post Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-|   Delete own post   |    Click "Delete" on post list page"      |        Post delete confirmation page opens with button to "Delete" and "Go back"              |  Pass    |   
-|   Delete post|      Click "Delete" on delete confirmation page    |          Message appears "Your post was successfully deleted". Post is deleted from post list page               |  Pass    |   
-|   Go back  |  Click "Go back" button       |    The user is redirected to the home page                   |  Pass    |   
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|      Sign in    |  The user is signed in and redirected to the home page. A message indicating success should appear and disappear automatically after 3 seconds  |  Enter username and password      |   User is signed in and the following message appeared [Register](/static/images/success-register.PNG)      |      Pass     |
+|    Sign In without filling in the mandadory fields      |   The user should get an error message: "Please fill out this field"       |  Click "Sign in" without filling in the mandadory fields       |   The following message appeared [Register](/static/images/success-register.PNG)     |       Pass    |
 
 
 #### Logout Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-|   Logout   |     Click "Sign out"     |        The user is redirected to the home page               |    Pass  |   
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|      Logout   |   The user is signed out and redirected to the home page. A message indicating success should appear and disappear automatically after 3 seconds      |  Click "Sign out"      |  The user is signed out and redirected to the home page. The following message appears [Register](/static/images/success-register.PNG)       |      Pass     |
+  
+
+#### Create Post Page
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|    Create post       |    Signed in user can create post. When user fills in fields and clicks "Create", a message appears "Your post is awaiting approval"    |  Fill in all fields and click "Create"      |   Message appears "Your post is awaiting approval" [Register](/static/images/success-register.PNG)       |     Pass       |
+|    Incomplete form      |    The user should get an error message: "Please fill out this field"       |     Leave one field blank and click "Create"    |   The user gets an error message: "Please fill out this field"        |       Pass    |
+|  Unique post title         |   The user should get an error message: "Post with this Title already exists"     |     Copy post title from post list page, fill out remaing fields and click "Create"   |   The follwoing message appears [Create post](/static/images/success-register.PNG)    |      Pass      |
+
+
+####  Update Post Page
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|    Update own post     |  |  Click edit and update fields. Click "Update"       |    The success message appears [Update post](/static/images/success-post-updated.PNG)    | Pass
+
+
+
+####  Delete post Page
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|     Delete own post   |    A signed in user can delete their own posts.     |   Click "Delete" on the home page, Post delete confirmation page opens, click "Delete"     |   Message appears "Your post was successfully deleted".      |   Pass        |
+|     Go back     |   In the delete confirmation page, the user has the option to click on "Go back" to return to the home page, and not delte the post    |  Click "Delete" on the home page, Post delete confirmation page opens, click "Go back"      |    The user is returned to the home page and the post is not deleted    |    Pass       |
+
+
+### About page (User signed out)
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|     Sign-in link       |   Sign in link is available and when user clicks "Sign in" they will be redirected to sign in page"     |   Open About page and click "Sign in"     |    User is redirected to sign in page    |     Pass
+|     Register link       |   Register  link is available and when user clicks "Sign up" they will be redirected to sign up page"     |   Open About page and click "Sign up"     |    User is redirected to sign up page    |     Pass
+
+
+### About page (User signed in)
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|    Sign-in/Register links       |   Sign-in/Register links not present     |  Open about page and verify Sign-in/Register links not present     |   Sign-in/Register links not present     |   Pass        |
 
 
 
 
-####  Page
-| Feature               | Action     | Expected Result                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
-|      |          |                       |      |   
-
+| Feature | Expect | Action | Result | Pass/Fail |
+|---------|--------|--------|--------|-----------|
+|         |        |        |        |           |
 
 
 ## Browser Testing
 
-The project was tested extensively on Google Chrome, microsoft Edge and Safari browsers, where no browser compatibility issues arose.
+The project was tested extensively on Google Chrome, Microsoft Edge and Safari browsers, where no browser compatibility issues arose.
 
 ## Device Testing
 
