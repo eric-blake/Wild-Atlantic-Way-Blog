@@ -34,7 +34,7 @@
 ### HTML
 
 All HTML pages were run though the Validator: [W3C Validator](https://validator.w3.org/)
-One error found in Login page, as outlined below.
+One error found in Register page, as outlined below.
 
 **Home Page**
 
@@ -242,7 +242,7 @@ Only files with custom-written Python code have been verified with the [CI Pytho
 ####  Update Post Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|    Update own post     |   Click edit and update fields. Click "Update"       |    The success message appears ![Update post](/static/images/success-messages/success-post-updated.PNG)    | Pass
+|    Update own post     | Signed in user can update own post|  Click edit and update fields. Click "Update"       |    The success message appears ![Update post](/static/images/success-messages/success-post-updated.PNG)    | Pass
 </details>
 
 <details>
