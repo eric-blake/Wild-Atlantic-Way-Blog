@@ -482,6 +482,8 @@ By forking the repository, you can make a copy of the repository and make change
 * Django Documentation
 * The flowchart was created using Microsoft Visio.
 * The Favicon was taken from [Icons8](https://icons8.com/ "Icons8").
+* Pictures are from [Pixabay](https://pixabay.com/ "Pixabay"), and personal photos taken on my phone.
+* Post content are from Wikepedia  [Wikipedia](https://www.wikipedia.org/ "Wikipedia").  
 * Slugify code - https://stackoverflow.com/questions/45847278/django-use-slugify-for-detail-url
 * Reverse lazy code - https://stackoverflow.com/questions/48669514/difference-between-reverse-and-reverse-lazy-in-django
 * Sort post by most liked code - https://stackoverflow.com/questions/23033769/django-order-by-count
