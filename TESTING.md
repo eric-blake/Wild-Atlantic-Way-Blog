@@ -361,4 +361,3 @@ There are no known bugs in the current deployment of the site. A number of bugs 
 |   Fix issue to prevent unregistered user directly accessing a page by the URL                |      Add LoginRequiredMixin to Post-Create, Post-Update and Post_Delete views               |       Fixed    |      
 |    Post detail page was not accessible to logged ut user               |        Removed LoginRequiredMixin  from PostDEtail view           |     Fixed      |      
 |        Delete-post success message was not appearing after post was deleted          |     Updated the delete method in the PostDelete view               | Fixed           |      
-|  
