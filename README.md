@@ -4,7 +4,11 @@ Wild Atlantic Way travel blog is a public online blog-style platform where users
 Unregistered users can view the list of posts and select a post to view the full post and comments.
 Registered users can create, update and delete their own post. They can also leave comments and like posts.
 
-'![Screenshot of Wild Atlantic Way Travel Blog](assets/images/)'
+### Screenshot of Wild Atlantic Way Travel Blog
+
+| Desktop | Mobile | 
+|---------|--------
+| ![Desktop](/static/images/waw-desktop.PNG)    |![Mobile](/static/images/waw-mobile.PNG) 
 
 -By Eric Blake
 
