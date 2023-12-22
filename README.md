@@ -77,7 +77,7 @@ Registered users can create, update and delete their own post. They can also lea
 
 ### Agile Development Tool
 
-I utilized a GitHub project and a Kanban board. ![Kanban board](https://github.com/users/eric-blake/projects/13)
+I utilized a GitHub project and a Kanban board. [Kanban board](https://github.com/users/eric-blake/projects/13)
 As I start working on each issue I move it to the 'In progress' column.  When the coding for each issue has been completed, the issue is then moved to the 'done' column.
 
 ### User Stories
@@ -478,6 +478,12 @@ By forking the repository, you can make a copy of the repository and make change
 * Django Documentation
 * The flowchart was created using Microsoft Visio.
 * The Favicon was taken from [Icons8](https://icons8.com/ "Icons8").
+* Slugify code - https://stackoverflow.com/questions/45847278/django-use-slugify-for-detail-url
+* Reverse lazy code - https://stackoverflow.com/questions/48669514/difference-between-reverse-and-reverse-lazy-in-django
+* Sort post by most liked code - https://stackoverflow.com/questions/23033769/django-order-by-count
+* SuccessMessageMixin code - https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview
+* LoginRequiredMixin code - https://forum.djangoproject.com/t/how-to-protect-my-django-content-from-directly-accessing-by-url/8294
+
 
 ## Acknowledgements
 

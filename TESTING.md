@@ -48,10 +48,14 @@ One error found in Login page, as outlined below.
 
    ![Posts page image](/static/images/testing/html-validator.PNG)
 
-**Register Page**
-- ![Register page image](/static/images/testing/)
   
 **Login Page**
+
+ ![Posts page image](/static/images/testing/html-validator.PNG)
+
+
+**Register Page**
+
 - There is an issue with how the crispy form is rendered. “ul element is not allowed as a child of small"
   
    ![login page image](/static/images/testing/html-error.PNG)
@@ -83,14 +87,11 @@ One error found in Login page, as outlined below.
 
 ### JavaScript
 The small JavaScript snippet in the base.html has been passed through [JSHint Validator](https://jshint.com/) without issue.
-Validator: 
 
 
 ### Python
 
-Validator: [CI Python Linter](https://pep8ci.herokuapp.com/).
-
-Only files with custom-written Python code have been verified with the CI python Linter.
+Only files with custom-written Python code have been verified with the [CI Python Linter](https://pep8ci.herokuapp.com/).
 
 | File | Result | Screenshot
 |---------|--------|--------
@@ -107,7 +108,7 @@ Only files with custom-written Python code have been verified with the CI python
 
 - I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
 
-- No major issue found
+- No major issues found
 
 | Page | Desktop | Mobile
 |---------|--------|--------
@@ -121,53 +122,6 @@ Only files with custom-written Python code have been verified with the CI python
 | Logout |![Logout](/static/images/lighthouse/logout.PNG)    |![Logout](/static/images/lighthouse/logout-mobile.PNG) 
 | Register |![Register](/static/images/lighthouse/register.PNG)    |![Login](/static/images/lighthouse/register-mobile.PNG) 
 
-
-
-
-**Home Page**
-- ![Home page image](/static/images/testing/)
-
-**About Page**
-- ![About page image](/static/images/testing/)
-
-**Categories Page**
-- ![Categories page image](/static/images/testing/)
-
-**Posts Page**
-- ![Posts page image](/static/images/testing/)
-
-**Post detail Page**
-- ![Post detail page image](/static/images/testing/)
-
-**Header Page**
-- ![Header page image](/static/images/testing/)
-
-**Footer Page**
-- ![Footer page image](/static/images/testing/)
-
-**Sidebar Page**
-- ![Sidebar page image](/static/images/testing/)
-- 
-**Pagination Page**
-- ![Pagination page image](/static/images/testing/)
-
-**Create Post Page**
-- ![Create post page image](/static/images/testing/)
-
-**Update Post Page**
-- ![Update post page image](/static/images/testing/)
-- 
-**Delete Post Page**
-- ![Delete post page image](/static/images/testing/)
-
-**Register Page**
-- ![Register page image](/static/images/testing/)
-
-**Login Page**
-- ![login page image](/static/images/testing/)
-  
-**Logout Page**
-- ![Logout page image](/static/images/testing/)
 
 
 ## Manual Testing
@@ -288,7 +242,7 @@ Only files with custom-written Python code have been verified with the CI python
 ####  Update Post Page
 | Feature | Expect | Action | Result | Pass/Fail |
 |---------|--------|--------|--------|-----------|
-|    Update own post     |  |  Click edit and update fields. Click "Update"       |    The success message appears ![Update post](/static/images/success-messages/success-post-updated.PNG)    | Pass
+|    Update own post     |   Click edit and update fields. Click "Update"       |    The success message appears ![Update post](/static/images/success-messages/success-post-updated.PNG)    | Pass
 </details>
 
 <details>
