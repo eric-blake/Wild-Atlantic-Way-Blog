@@ -3,6 +3,12 @@
 
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 body, .card-account{
     background-color: rgba(240, 238, 238);
     font-family: karla, sans-serif;
@@ -33,10 +39,14 @@ h1, h2,h3,h4,h5,h6 {
 }
 
 
+/* Images */
+
 img {
     width:100%;
 }
 
+
+/* Links */
 
 a:link {
     text-decoration: none;
@@ -54,14 +64,26 @@ a {
 } 
 
 
+/* Buttons */
+
+.btn-cat {
+    background-color: #fff;
+}
+
 .btn-like {
     color:red;
     border:none;
 
 }
 
+#btn-cat:hover {
+    border-color: orange;
+    border-width: 5px;
+}
+
 
 /* Footer */
+
 .contact-details {
     list-style: none;
 }
@@ -76,21 +98,11 @@ a {
 
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 footer {
     margin-top: auto;
 }
 
-.avatar-image {
-border-radius: 50%;
-max-width: 50%;
-    height: auto;
-}
+
 
 ul {
     padding: 0;
@@ -98,20 +110,12 @@ ul {
 }
 
 
-.btn-cat {
-    background-color: #fff;
-}
 
 .highlight {
     color: red;
     background-color:yellowgreen
 }
 
-
-#btn-cat:hover {
-    border-color: orange;
-    border-width: 5px;
-}
 
 /* media queries for sidebar */
 @media screen and (min-width:1400px) {
