@@ -93,28 +93,16 @@ Validator: [CI Python Linter](https://pep8ci.herokuapp.com/).
 
 Only files with custom-written Python code have been verified with the CI python Linter.
 
-**admin.py**
-- No errors found
-
-**models.py**
-- No errors found
-
-**forms.py**
-- No errors found
+| Feature | Expect | Action
+|---------|--------|--------
+| **admin.py** |No errors found | ![Admin](/static/images/testing/admin.PNG)
+| **models.py** |No errors found | ![Models](/static/images/testing/models.PNG)
+| **forms.py** |No errors found | ![Forms](/static/images/testing/forms.PNG)
+| **views.py** |No errors found | ![Views](/static/images/testing/views.PNG)
+| **urls.py** |No errors found | ![urls](/static/images/testing/urls-waw.PNG)
+| **urls.py** |No errors found | ![urls](/static/images/testing/urls.PNG)
+| **settings.py** |No errors found | ![Settings](/static/images/testing/settings.PNG)
   
-**views.py**
-- No errors found
-
-**waw_blog/urls.py**
-- No errors found.
-
-**wildatlanticway/urls.py**
-- No errors found.
-
-**settings.py**
-- No errors found
-
-
 
 ### Lighthouse
 
