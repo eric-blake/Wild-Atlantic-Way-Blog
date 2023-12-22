@@ -86,14 +86,13 @@ The small JavaScript snippet in the base.html has been passed through [JSHint Va
 Validator: 
 
 
-
 ### Python
 
 Validator: [CI Python Linter](https://pep8ci.herokuapp.com/).
 
 Only files with custom-written Python code have been verified with the CI python Linter.
 
-| Feature | Expect | Action
+| File | Result | Screenshot
 |---------|--------|--------
 | **admin.py** |No errors found | ![Admin](/static/images/testing/admin.PNG)
 | **models.py** |No errors found | ![Models](/static/images/testing/models.PNG)
@@ -106,8 +105,24 @@ Only files with custom-written Python code have been verified with the CI python
 
 ### Lighthouse
 
-**Base Page**
-- ![Home page image](/static/images/testing/)
+- I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
+
+- No major issue found
+
+| Page | Desktop | Mobile
+|---------|--------|--------
+| Home |![Home](/static/images/lighthouse/home.PNG)    |![Home](/static/images/lighthouse/home-mobile.PNG) 
+| Post detail |![Post detail](/static/images/lighthouse/detail.PNG)    |![Post detail](/static/images/lighthouse/detail-mobile.PNG) 
+| About |![About](/static/images/lighthouse/about.PNG)    |![About](/static/images/lighthouse/about-mobile.PNG) 
+| Create post |![Create post](/static/images/lighthouse/create-post.PNG)    |![Create post](/static/images/lighthouse/create-post-mobile.PNG) 
+| Update post |![Update post](/static/images/lighthouse/update-post.PNG)    |![Update post](/static/images/lighthouse/update-post-mobile.PNG) 
+| Delete post |![Delete post](/static/images/lighthouse/delete-post.PNG)    |![Delete post](/static/images/lighthouse/delete-post-mobile.PNG) 
+| Login |![Login](/static/images/lighthouse/login.PNG)    |![Login](/static/images/lighthouse/login-mobile.PNG) 
+| Logout |![Logout](/static/images/lighthouse/logout.PNG)    |![Logout](/static/images/lighthouse/logout-mobile.PNG) 
+| Register |![Register](/static/images/lighthouse/register.PNG)    |![Login](/static/images/lighthouse/register-mobile.PNG) 
+
+
+
 
 **Home Page**
 - ![Home page image](/static/images/testing/)
