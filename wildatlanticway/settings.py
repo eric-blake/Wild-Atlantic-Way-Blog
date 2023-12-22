@@ -34,12 +34,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 
-X_FRAME_OPTIONS = 'SAMEORIGIN' 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['8000-eric-blake-wild-atlantic-qvlosoy6sv.us2.codeanyapp.com',
-                 'localhost', 'wild-atlantic-way.herokuapp.com', '8000-eric-blake-wild-atlantic-67dbyi50c9.us2.codeanyapp.com', 'wild-atlantic-way-c6d960b228a8.herokuapp.com']
-
-
+                 'localhost', 'wild-atlantic-way.herokuapp.com',
+                 '8000-eric-blake-wild-atlantic-67dbyi50c9.us2.codeanyapp.com',
+                 'wild-atlantic-way-c6d960b228a8.herokuapp.com']
 
 
 # Application definition
@@ -64,8 +64,8 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/' 
-LOGOUT_REDIRECT_URL = '/' 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -130,16 +130,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 

@@ -109,7 +109,7 @@ Only files with custom-written Python code have been verified with the CI python
 - No errors found
 
 **waw_blog/urls.py**
-- All clear, no errors found.
+- No errors found.
 
 **wildatlanticway/urls.py**
 - No errors found.
